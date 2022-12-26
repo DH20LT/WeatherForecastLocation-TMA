@@ -2,12 +2,16 @@ package com.example.weatherforecast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,14 +40,18 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.Priority;
 import com.google.android.gms.location.SettingsClient;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivityHome extends AppCompatActivity {
@@ -63,7 +71,6 @@ public class MainActivityHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
-        GetCurrentWeatherData("Saigon");
 
         Next7Days = (TextView) findViewById(R.id.Next7DaysUnderline);
         textCityName1 = (TextView) findViewById(R.id.cityName1);
@@ -93,33 +100,76 @@ public class MainActivityHome extends AppCompatActivity {
             @Override
             public void onLocationResult(@NonNull LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                if(locationResult.getLastLocation() != null ) {
+                if (locationResult.getLastLocation() != null) {
                     //currentLocation = locationResult.getLocations()[0];
                     double latitude = currentLocation.getLatitude();
                     double longitude = currentLocation.getLongitude();
+                    Log.i(TAG, "onLocationResult: " + latitude + " " + longitude);
                 }
             }
         };
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
+        fusedLocationProviderClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        // Got last known location. In some rare situations this can be null.
+                        if (location != null) {
+                            // Logic to handle location object
+                            Log.i(TAG, "onSuccess getLastLocation: " + location.getLatitude() + " " + location.getLongitude());
+                            Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+                            List<Address> addresses = null;
+                            try {
+                                addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            String cityName = addresses.get(0).getLocality();
+                            textCityName1.setText(cityName);
+                            String stateName = addresses.get(0).getAddressLine(0);
+                            String countryName = addresses.get(0).getCountryName();
+
+                            Log.i(TAG, "onSuccess: " + cityName + ", " + stateName + ", " + countryName);
+                        } else
+                        {
+                            Log.i(TAG, "onSuccess getLastLocation: null");
+                        }
+                    }
+                });
 
 
         findIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityHome.this,MainActivityFind.class));
+                startActivity(new Intent(MainActivityHome.this, MainActivityFind.class));
             }
         });
 
         favoriteIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityHome.this,MainActivityFavorite.class));
+                startActivity(new Intent(MainActivityHome.this, MainActivityFavorite.class));
             }
         });
 
         userIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityHome.this,MainActivityLoginByWhat.class));
+                startActivity(new Intent(MainActivityHome.this, MainActivityLoginByWhat.class));
             }
         });
 
@@ -127,12 +177,16 @@ public class MainActivityHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String city = textCityName1.getText().toString();
+                Log.i(TAG, "Next7Days onClick: city name to send through Intent " + city);
                 Intent intent = new Intent(MainActivityHome.this, MainActivityNext7Days.class);
                 intent.putExtra("name", city);
                 startActivity(intent);
             }
         });
 
+        if (textCityName1.getText().toString() != null) {
+            GetCurrentWeatherData(textCityName1.getText().toString());
+        }
     }
 
     private void requestLocation() {
@@ -171,7 +225,8 @@ public class MainActivityHome extends AppCompatActivity {
         });
     }
 
-    public void GetCurrentWeatherData(String data){
+    public void GetCurrentWeatherData(String data) {
+        Log.i(TAG, "GetCurrentWeatherData");
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivityHome.this);
         String url = "https://api.openweathermap.org/data/2.5/weather?q="
                 + data + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
@@ -186,7 +241,7 @@ public class MainActivityHome extends AppCompatActivity {
                             textCityName1.setText(name);
 
                             long l = Long.valueOf(day);
-                            Date date = new Date(l*1000L);
+                            Date date = new Date(l * 1000L);
                             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
                             String Day = simpleDateFormat.format(date);
                             textTime.setText(Day);
@@ -196,36 +251,31 @@ public class MainActivityHome extends AppCompatActivity {
                             String status = jsonObjectSubWeather.getString("main");
 
                             textStatus.setText(status);
-                            if(status.equals("Clouds"))
-                            {
+                            if (status.equals("Clouds")) {
                                 imgAnh1.setImageResource(R.drawable.ic_cloudy);
-                            }
-                            else if(status.equals("Rain")){
+                            } else if (status.equals("Rain")) {
                                 imgAnh1.setImageResource(R.drawable.ic_rainy);
-                            }
-                            else if(status.equals("Snow")){
+                            } else if (status.equals("Snow")) {
                                 imgAnh1.setImageResource(R.drawable.ic_snowy);
-                            }
-                            else if(status.equals("Clear")){
+                            } else if (status.equals("Clear")) {
                                 imgAnh1.setImageResource(R.drawable.ic_sunnycloudy);
-                            }
-                            else{
+                            } else {
                                 imgAnh1.setImageResource(R.drawable.ic_thunder);
                             }
 
                             JSONObject jsonObjectMain = jsonObject.getJSONObject("main");
                             int temp = jsonObjectMain.getInt("temp");
                             int pressure = jsonObjectMain.getInt("pressure");
-                            textTempurature.setText(temp+"°");
-                            textHpa.setText(pressure+"hpa");
+                            textTempurature.setText(temp + "°");
+                            textHpa.setText(pressure + "hpa");
 
                             JSONObject jsonObjectWind = jsonObject.getJSONObject("wind");
                             String wind = jsonObjectWind.getString("speed");
-                            textWind.setText(wind+"m/s");
+                            textWind.setText(wind + "m/s");
 
                             JSONObject jsonObjectCloud = jsonObject.getJSONObject("clouds");
                             String cloud = jsonObjectCloud.getString("all");
-                            textCloud.setText(cloud+"%");
+                            textCloud.setText(cloud + "%");
 
                         } catch (JSONException e) {
                             e.printStackTrace();

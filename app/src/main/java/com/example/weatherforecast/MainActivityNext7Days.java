@@ -36,7 +36,6 @@ public class MainActivityNext7Days extends AppCompatActivity {
     ArrayList<WeatherItemNext7Days> weatherArray;
     public static final String TAG = "MainActivityNext7Days";
 
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +74,9 @@ public class MainActivityNext7Days extends AppCompatActivity {
 
     public void Get7DaysData(String data) {
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivityNext7Days.this);
-        String url = "https://api.openweathermap.org/data/2.5/forecast?q="+data+"&units=metric&lang=vi&cnt=15&appid=7dc9f0e071501cb394623f1306fd2b0a";
+        String url = "https://api.openweathermap.org/data/2.5/forecast?q="+data+"&units=metric&lang=vi&cnt=15&appid=" +
+                BuildConfig.API_KEY
+                 /*"7dc9f0e071501cb394623f1306fd2b0a"*/;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
