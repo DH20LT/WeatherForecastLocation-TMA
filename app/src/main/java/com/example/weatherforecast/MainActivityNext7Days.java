@@ -34,7 +34,6 @@ public class MainActivityNext7Days extends AppCompatActivity {
     ListView lv;
     WeatherAdapterNext7Days weatherAdapter;
     ArrayList<WeatherItemNext7Days> weatherArray;
-    Geocoder geocoder;
     public static final String TAG = "MainActivityNext7Days";
 
 
