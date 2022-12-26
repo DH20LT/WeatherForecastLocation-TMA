@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/Next_Day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tomorrow"
+        android:textSize="18dp"
+        android:fontFamily="@font/geomanist_regular"
+        android:textColor="#1F1E31"
+        />
+
+    <TextView
+        android:id="@+id/Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 Apr"
+        android:textSize="18dp"
+        android:fontFamily="@font/geomanist_regular"
+        android:textColor="#9A9A9A"
+        android:layout_below="@id/Next_Day"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24°"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="10dp"
+        android:textSize="21dp"
+        android:textColor="#1F1E31"
+        android:fontFamily="@font/geomanist_book"
+        />
+
+    <ImageView
+        android:id="@+id/img_example"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/ic_sunny"
+        android:layout_marginLeft="300dp"
+        />
+
+</RelativeLayout>

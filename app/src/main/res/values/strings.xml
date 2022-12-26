@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="my_text"><u>Next 7 Days</u></string>
+    <string name="my_text_sign_in"><u>Đăng ký</u></string>
+
+</resources>

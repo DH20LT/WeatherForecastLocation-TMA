@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="70dp"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:gravity="center"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/time_horizontal_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00 PM"
+        android:fontFamily="@font/geomanist_book"
+        android:textSize="17dp"
+        android:layout_weight="1"
+        />
+
+    <ImageView
+        android:id="@+id/anh_minh_hoa"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_sunny"
+        android:layout_below="@id/time_horizontal_listview"
+        android:layout_weight="1"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24°"
+        android:layout_below="@id/anh_minh_hoa"
+        android:fontFamily="@font/geomanist_book"
+        android:textSize="20dp"
+        android:textColor="#1F1E31"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        />
+
+
+
+
+
+
+
+</LinearLayout>

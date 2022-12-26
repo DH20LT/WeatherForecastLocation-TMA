@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityFind"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:id="@+id/Linear1"
+        android:layout_margin="20dp"
+        >
+
+        <EditText
+            android:id="@+id/editCity"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Nhập tên thành phố..."
+            android:background="@drawable/bo_goc_tren_trai_duoi_trai_cho_edit_text"
+            android:paddingLeft="15dp"
+            android:layout_weight="7"
+            android:layout_marginTop="2dp"
+            />
+
+        <Button
+            android:id="@+id/btnOK"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:text="OK"
+            android:layout_weight="3"
+            android:fontFamily="@font/geomanist_medium"
+            android:background="@drawable/bo_goc_tren_phai_duoi_phai_cho_button_mau_hong"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginTop="1dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/the_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="98dp"
+        android:background="#CBD7DE"
+
+        />
+
+    <ImageView
+        android:id="@+id/favorite_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="270dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/favorite3" />
+
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="340dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/userinfo" />
+
+    <ImageView
+        android:id="@+id/home_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/chart_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/line_chart"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="120dp"
+        android:layout_marginBottom="28dp"
+        />
+
+</RelativeLayout>

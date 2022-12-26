@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivityLoginByWhat">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/left" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/nameApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/geomanist_medium"
+            android:paddingBottom="15dp"
+            android:text="Weather Control"
+            android:textColor="#1F1E31"
+            android:textSize="25dp" />
+
+        <RelativeLayout
+            android:id="@+id/btnFacebookLogin"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bo_goc_cho_background_trang_den_button">
+
+            <ImageView
+                android:id="@+id/img1_for_button1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/facebook" />
+
+            <TextView
+                android:id="@+id/text1_for_button1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:fontFamily="@font/geomanist_medium"
+                android:gravity="center"
+                android:text="Đăng nhập bằng Facebook"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnGoogleButton"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bo_goc_cho_background_trang_den_button">
+
+            <ImageView
+                android:id="@+id/img1_for_button2"
+                android:layout_width="17.5dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/google" />
+
+            <TextView
+                android:id="@+id/text1_for_button2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:fontFamily="@font/geomanist_medium"
+                android:gravity="center"
+                android:text="Đăng nhập bằng Google"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </RelativeLayout>
+        ,
+
+        <RelativeLayout
+            android:id="@+id/btnAccountLogin"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bo_goc_cho_background_trang_den_button">
+
+            <ImageView
+                android:id="@+id/img1_for_button3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="16.5dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/account" />
+
+            <TextView
+                android:id="@+id/text1_for_button3"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:fontFamily="@font/geomanist_medium"
+                android:gravity="center"
+                android:text="Đăng nhập bằng Account"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/Accounted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geomanist_regular"
+                android:text="Chưa có tài khoản?"
+                android:textColor="#1F1E31"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/btnDangKy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/Accounted"
+                android:fontFamily="@font/geomanist_regular"
+                android:text="@string/my_text_sign_in"
+                android:textColor="#1F1E31"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/the_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="98dp"
+        android:background="#CBD7DE"
+
+        />
+
+    <ImageView
+        android:id="@+id/favorite_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="270dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/favorite3" />
+
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="340dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/userinfo1" />
+
+    <ImageView
+        android:id="@+id/home_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/chart_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="120dp"
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/line_chart" />
+
+</RelativeLayout>

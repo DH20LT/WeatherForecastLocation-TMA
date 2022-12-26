@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="40dp">
+
+    <TextView
+        android:id="@+id/Them_Added"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vũng Tàu"
+        android:textSize="21dp"
+        android:fontFamily="@font/geomanist_book"
+        android:textColor="#1F1E31"
+        />
+
+    <TextView
+        android:id="@+id/Do_C_Added"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26°"
+        android:layout_alignParentRight="true"
+        android:textSize="21dp"
+        android:fontFamily="@font/geomanist_regular"
+        android:textColor="#1F1E31"
+        />
+
+    <TextView
+        android:id="@+id/Description_Added"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chủ yếu là mây"
+        android:layout_alignParentRight="true"
+        android:textSize="16dp"
+        android:layout_below="@id/Do_C_Added"
+        android:fontFamily="@font/geomanist_regular"
+        android:textColor="#1F1E31"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="2dp"
+        />
+
+</RelativeLayout>
