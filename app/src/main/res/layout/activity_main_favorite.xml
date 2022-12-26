@@ -19,13 +19,12 @@
         android:id="@+id/textThemTP"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
-        android:text="Thêm thành phố"
-        android:textSize="19dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/geomanist_medium"
+        android:text="Thêm thành phố"
         android:textColor="#1F1E31"
-        />
+        android:textSize="19dp" />
 
     <ImageView
         android:id="@+id/img_plus"

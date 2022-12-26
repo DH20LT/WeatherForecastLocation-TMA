@@ -1,18 +1,47 @@
 package com.example.weatherforecast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.IntentSender;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.WindowManager;
+import android.util.Log;
 
-public class MainActivityLoading extends AppCompatActivity {
+import com.google.android.gms.common.api.ResolvableApiException;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.location.Priority;
+import com.google.android.gms.location.SettingsClient;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+
+import java.util.List;
+
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class MainActivityLoading extends AppCompatActivity implements EasyPermissions.PermissionCallbacks{
+
+    private int RC_LOCATION_PERM = 124;
+    private static final String TAG = "MainActivityLoading";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_loading);
+        // Dùng try catch để tránh bị crash app
+
+
+        try {
+            requestLocationPermission();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        new Handler().postDelayed(new Runnable() {
 //            @Override
@@ -22,6 +51,50 @@ public class MainActivityLoading extends AppCompatActivity {
 //            }
 //        },5000);
     }
+
+
+
+    private void requestLocationPermission() {
+        Log.i(TAG, "requestLocationPermission");
+        // Kiểm tra SDK
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return;
+        }
+
+        // Kiểm tra quyền đã được chấp thuận chưa
+        if (EasyPermissions.hasPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            Intent intent = new Intent(this, MainActivityHome.class);
+            startActivity(intent);
+        } else {
+            // Nếu chưa được chấp thuận thì yêu cầu chấp thuận
+            EasyPermissions.requestPermissions(
+                    this,
+                    getString(R.string.rationale_location),
+                    RC_LOCATION_PERM,
+                    Manifest.permission.ACCESS_FINE_LOCATION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+        Intent intent = new Intent(this, MainActivityHome.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+        finish();
+    }
+
+
     //    // Yêu cầu quyền truy cập vị trí
 //    private void requestLocationPermission() {
 //        // Kiểm tra SDK
