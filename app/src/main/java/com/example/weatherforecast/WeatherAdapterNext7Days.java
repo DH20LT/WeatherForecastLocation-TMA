@@ -56,7 +56,7 @@ public class WeatherAdapterNext7Days extends BaseAdapter {
 
         return view;
     }
-//
+
 //    @NonNull
 //    @Override
 //    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
