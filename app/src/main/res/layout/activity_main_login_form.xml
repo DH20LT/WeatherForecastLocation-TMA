@@ -120,7 +120,8 @@
                 android:paddingLeft="10dp"
                 android:textSize="14dp"
                 android:fontFamily="@font/geomanist_regular"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="5dp"
+                android:inputType="textPassword"/>
 
             <TextView
                 android:id="@+id/btnLogin"

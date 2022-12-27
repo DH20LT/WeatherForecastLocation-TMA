@@ -63,7 +63,7 @@ public class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> 
             favoriteName.setText(weatherItem.getNextDay());
             favoriteDescription.setText(weatherItem.getDate());
             favoriteTemp.setText(weatherItem.getTemp() + "°");
-            imgId2.setImageResource(weatherItem.getImgId());
+            //imgId2.setImageResource(weatherItem.getImgId());
         }
 
         return customView;

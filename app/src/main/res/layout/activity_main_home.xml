@@ -235,11 +235,10 @@
         android:id="@+id/find_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_find"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="55dp"
-        />
+        android:src="@drawable/icon_find" />
 
     <ImageView
         android:id="@+id/favorite_icon"

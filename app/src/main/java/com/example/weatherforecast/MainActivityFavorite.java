@@ -27,6 +27,7 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,11 +38,10 @@ public class MainActivityFavorite extends AppCompatActivity {
     ImageView backIcon, btnAdd, btnEdit, userIcon, homeIcon, chartIcon, favoriteIcon, findIcon;
     TextView nameTP;
     ListView lv;
-    Place place;
     private static final int AUTOCOMPLETE_REQUEST_CODE = 1;
     WeatherAdapterNext7Days weatherAdapter;
     ArrayList<WeatherItemNext7Days> weatherArray;
-    public static final String TAG = "MainActivityNext7Days";
+    public static final String TAG = "MainActivityFavorite";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,14 +76,14 @@ public class MainActivityFavorite extends AppCompatActivity {
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityFavorite.this,MainActivityHome.class));
+                startActivity(new Intent(MainActivityFavorite.this, MainActivityHome.class));
             }
         });
 
         userIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityFavorite.this,MainActivityLoginByWhat.class));
+                startActivity(new Intent(MainActivityFavorite.this, MainActivityLoginByWhat.class));
             }
         });
 
@@ -101,7 +101,7 @@ public class MainActivityFavorite extends AppCompatActivity {
         String url = "https://api.openweathermap.org/data/3.0/onecall?lat="
                 + latData + "&lon=" + longData
                 + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
-        Log.i(TAG,"homnaytesturl" + url);
+        Log.i(TAG, "homnaytesturl" + url);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -133,6 +133,7 @@ public class MainActivityFavorite extends AppCompatActivity {
     }
 
     public void onSearchCalled() {
+        Log.i(TAG, "onSearchCalled");
         // Set the fields to specify which types of place data to return.
         List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG);
         // Start the autocomplete intent.
@@ -140,15 +141,18 @@ public class MainActivityFavorite extends AppCompatActivity {
                 AutocompleteActivityMode.FULLSCREEN, fields)
                 .setCountry("VN")
                 .build(this);
+        Log.i(TAG, "startActivityForResult");
         startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.i(TAG, "onActivityResult");
         if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                place = Autocomplete.getPlaceFromIntent(data);
+                Log.i(TAG, "onActivityResult RESULT_OK");
+                Place place = Autocomplete.getPlaceFromIntent(data);
                 Log.i(TAG, "Place: " + place.getName() + ", " + place.getId() + ", " + place.getAddress());
                 Toast.makeText(MainActivityFavorite.this, "ID: " + place.getId() + "address:" + place.getAddress() +
                         "Name:" + place.getName() + " latlong: " + place.getLatLng(), Toast.LENGTH_LONG).show();
@@ -164,5 +168,6 @@ public class MainActivityFavorite extends AppCompatActivity {
                 // The user canceled the operation.
             }
         }
+
     }
 }

@@ -155,7 +155,8 @@
                 android:fontFamily="@font/geomanist_regular"
                 android:hint="Nhập mật khẩu"
                 android:paddingLeft="10dp"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:inputType="textPassword"/>
 
             <RelativeLayout
                 android:layout_width="260dp"
@@ -195,7 +196,8 @@
                 android:fontFamily="@font/geomanist_regular"
                 android:hint="Nhập lại mật khẩu"
                 android:paddingLeft="10dp"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:inputType="textPassword"/>
 
             <TextView
                 android:id="@+id/btnRegister"
