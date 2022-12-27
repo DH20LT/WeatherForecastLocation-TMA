@@ -13,6 +13,10 @@ import java.util.ArrayList;
 public class WeatherAdapterNext7Days extends BaseAdapter {
     Context context;
     ArrayList<WeatherItemNext7Days> weatherItemArrayList;
+    private int i;
+    private View view;
+    private ViewGroup viewGroup;
+
 
     public WeatherAdapterNext7Days(Context context, ArrayList<WeatherItemNext7Days> weatherItemArrayList) {
         this.context = context;
@@ -47,15 +51,14 @@ public class WeatherAdapterNext7Days extends BaseAdapter {
         TextView temp = view.findViewById(R.id.temp);
         ImageView imgId = view.findViewById(R.id.img_example);
 
-
         nextDay.setText(weatherItem.nextDay);
         Date.setText(weatherItem.date);
         temp.setText(weatherItem.temp+"°");
         imgId.setImageResource(weatherItem.imgId);
 
-
         return view;
     }
+
 
 //    @NonNull
 //    @Override

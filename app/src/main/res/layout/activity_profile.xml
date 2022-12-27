@@ -4,56 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityFavorite"
-    android:background="#FFF">
+    tools:context=".Profile"
+    android:background="#fff">
 
     <ImageView
         android:id="@+id/img_back"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="18dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/left" />
 
-    <TextView
-        android:id="@+id/textThemTP"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/geomanist_medium"
-        android:text="Thêm thành phố"
-        android:textColor="#1F1E31"
-        android:textSize="19dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
 
-    <ImageView
-        android:id="@+id/img_plus"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:src="@drawable/plus"
-        android:layout_marginTop="24.5dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="65dp"
-        />
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/aether"
+            app:riv_corner_radius="100dp"/>
+        <!--            app:riv_border_width="5dp"-->
+        <!--            app:riv_border_color="#5D70FB"/>-->
 
-    <ImageView
-        android:id="@+id/img_edit"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/edit"
-        android:layout_marginTop="22dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="15dp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TMA"
+            android:textSize="20dp"
+            android:fontFamily="@font/geomanist_bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            />
 
-    <ListView
-        android:id="@+id/listview_favorite"
-        android:layout_width="match_parent"
-        android:layout_height="520dp"
-        android:layout_below="@id/img_edit"
-        android:layout_marginTop="20dp"
-        android:divider="@null"
-        android:dividerHeight="0dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@tmaproplayer"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            android:fontFamily="@font/geomanist_medium"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            />
+
+    </LinearLayout>
 
     <View
         android:id="@+id/the_line"
@@ -81,10 +84,11 @@
         android:id="@+id/favorite_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:src="@drawable/favorite3"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="270dp"
         android:layout_marginBottom="29dp"
-        android:src="@drawable/favorite4" />
+        />
 
     <ImageView
         android:id="@+id/user_icon"
@@ -93,7 +97,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="340dp"
         android:layout_marginBottom="29dp"
-        android:src="@drawable/userinfo" />
+        android:src="@drawable/userinfo1" />
 
     <ImageView
         android:id="@+id/home_icon"

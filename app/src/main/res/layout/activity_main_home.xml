@@ -209,12 +209,12 @@
 
     <ListView
         android:id="@+id/listview_today"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/today"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/today"
+        android:orientation="horizontal"
 
         />
 

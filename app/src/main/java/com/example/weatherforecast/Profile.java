@@ -6,19 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
-public class MainActivityFavorite extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
-    ImageView backIcon, btnAdd, btnEdit, userIcon, homeIcon, chartIcon, favoriteIcon, findIcon;
-    TextView nameTP;
-    ListView listView;
+    ImageView chartIcon, homeIcon, favoriteIcon, userIcon, backIcon, findIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_favorite);
+        setContentView(R.layout.activity_profile);
 
         backIcon = findViewById(R.id.img_back);
         favoriteIcon = (ImageView) findViewById(R.id.favorite_icon);
@@ -30,7 +26,7 @@ public class MainActivityFavorite extends AppCompatActivity {
         findIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityFavorite.this, MainActivityFind.class));
+                startActivity(new Intent(Profile.this, MainActivityFind.class));
             }
         });
 
@@ -44,19 +40,22 @@ public class MainActivityFavorite extends AppCompatActivity {
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityFavorite.this,MainActivityHome.class));
+                startActivity(new Intent(Profile.this,MainActivityHome.class));
             }
         });
 
         userIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivityFavorite.this,MainActivityLoginByWhat.class));
+                startActivity(new Intent(Profile.this,MainActivityLoginByWhat.class));
             }
         });
 
-
+        favoriteIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Profile.this, MainActivityFavorite.class));
+            }
+        });
     }
-
-
 }

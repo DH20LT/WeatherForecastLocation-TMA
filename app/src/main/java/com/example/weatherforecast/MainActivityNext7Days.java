@@ -28,7 +28,6 @@ import java.util.Date;
 
 public class MainActivityNext7Days extends AppCompatActivity {
 
-    String tenthanhpho = "";
     ImageView backIcon, imgId;
     TextView textName, test;
     ListView lv;
@@ -40,7 +39,7 @@ public class MainActivityNext7Days extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main_next7days);
 
 //        imgId = (ImageView) findViewById(R.id.img_example);
         backIcon = (ImageView) findViewById(R.id.img_back);
@@ -59,22 +58,17 @@ public class MainActivityNext7Days extends AppCompatActivity {
 
         Intent intent = getIntent();
         String city = intent.getStringExtra("name");
-        if(city.equals("")){
-            tenthanhpho = "Saigon";
-            Get7DaysData(tenthanhpho);
-        }
-        else{
-            tenthanhpho = city;
-            Get7DaysData(tenthanhpho);
-        }
-
-
+        String txtLat = intent.getStringExtra("lat");
+        String txtLong = intent.getStringExtra("long");
+        Get7DaysData(txtLat, txtLong);
 
     }
 
-    public void Get7DaysData(String data) {
+    public void Get7DaysData(String latData, String longData) {
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivityNext7Days.this);
-        String url = "https://api.openweathermap.org/data/2.5/forecast?q="+data+"&units=metric&lang=vi&cnt=15&appid=" +
+        String url = "http://api.openweathermap.org/data/3.0/onecall?lat=" + latData +
+                "&lon=" + longData +
+                "&lang=vi" +
                 BuildConfig.API_KEY
                  /*"7dc9f0e071501cb394623f1306fd2b0a"*/;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {

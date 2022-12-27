@@ -18,6 +18,13 @@
         android:theme="@style/Theme.WeatherForecast"
         tools:targetApi="31">
         <activity
+            android:name=".Profile"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivityRegisterForm"
             android:exported="false" />
         <activity
@@ -50,6 +57,7 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -61,9 +69,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivityHome"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

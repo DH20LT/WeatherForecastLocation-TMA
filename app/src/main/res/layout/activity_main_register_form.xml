@@ -59,7 +59,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@id/img_user_for_register"
                     android:fontFamily="@font/geomanist_light"
-                    android:text="Tài khoản"
+                    android:text="Nickname"
                     android:textColor="#24609B"
                     android:textFontWeight="700"
                     android:textSize="16dp" />
@@ -75,7 +75,46 @@
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/background_editted_for_login"
                 android:fontFamily="@font/geomanist_regular"
-                android:hint="Nhập tài khoản"
+                android:hint="Nhập nickname"
+                android:paddingLeft="10dp"
+                android:textSize="14dp" />
+
+            <RelativeLayout
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp">
+
+                <ImageView
+                    android:id="@+id/img_email_for_register"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="1dp"
+                    android:src="@drawable/email" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/img_email_for_register"
+                    android:fontFamily="@font/geomanist_light"
+                    android:text="Email"
+                    android:textColor="#24609B"
+                    android:textFontWeight="700"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/editEmailRegister"
+                android:layout_width="260dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/background_editted_for_login"
+                android:fontFamily="@font/geomanist_regular"
+                android:hint="Nhập email"
                 android:paddingLeft="10dp"
                 android:textSize="14dp" />
 

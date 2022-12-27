@@ -15,11 +15,5 @@ public class WeatherItemNext7Days {
         this.imgId = imgId;
     }
 
-    public WeatherItemNext7Days(int temp, String hour) {
-        this.nextDay = nextDay;
-        this.date = date;
-        this.temp = temp;
-    }
-
 
 }

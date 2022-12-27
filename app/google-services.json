@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "913480558606",
+    "firebase_url": "https://weathercontrol-26712-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "weathercontrol-26712",
+    "storage_bucket": "weathercontrol-26712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913480558606:android:184bc97c544f774ac5b45f",
+        "android_client_info": {
+          "package_name": "com.example.weatherforecast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913480558606-e7vt8n8anvc9sgh0q6rn4k55164tb4f4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfrBC0OCYQllyuCxb6Ax_FXz2TQKI-5wI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913480558606-e7vt8n8anvc9sgh0q6rn4k55164tb4f4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
