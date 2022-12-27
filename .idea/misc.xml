@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/design_btn_search.xml" value="0.234" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/desing_fake_search.xml" value="0.234" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/detxem.xml" value="0.234" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/ic_search_24.xml" value="0.234" />
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_favorite.xml" value="0.33" />
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_find.xml" value="0.23550724637681159" />
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_home.xml" value="0.33" />

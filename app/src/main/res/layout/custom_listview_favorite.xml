@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="40dp">
+    android:padding="40dp"
+    android:layout_marginBottom="10dp">
 
     <TextView
         android:id="@+id/Them_Added"
@@ -38,6 +39,11 @@
         android:textColor="#1F1E31"
         android:layout_marginTop="5dp"
         android:layout_marginRight="2dp"
+        />
+    <ImageView
+        android:id="@+id/favoriteImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         />
 
 </RelativeLayout>

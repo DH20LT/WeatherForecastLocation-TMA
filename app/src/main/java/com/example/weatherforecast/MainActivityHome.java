@@ -3,7 +3,6 @@ package com.example.weatherforecast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -13,17 +12,12 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -71,7 +65,8 @@ public class MainActivityHome extends AppCompatActivity {
     LocationRequest locationRequest;
     LocationCallback locationCallback;
     Location currentLocation;
-    double currentLat, currentLong;
+    double currentLat;
+    double currentLong;
 
 
     @SuppressLint("MissingInflatedId")
@@ -152,7 +147,7 @@ public class MainActivityHome extends AppCompatActivity {
                                 addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
                                 Log.i(TAG, addresses.toString());
                             } catch (IOException e) {
-                                Log.i(TAG, "catch " + e.toString());
+                                Log.i(TAG, "catch " + e);
                                 e.printStackTrace();
                             }
                             String cityName = addresses.get(0).getLocality();
@@ -165,6 +160,20 @@ public class MainActivityHome extends AppCompatActivity {
                                 GetCurrentWeatherData(City);
                             }
                             GetCurrent1HourWeatherData(currentLat, currentLong);
+                            Next7Days.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    String city = textCityName1.getText().toString();
+                                    Log.i(TAG, "Next7Days onClick: city name to send through Intent " + city);
+                                    Log.i(TAG, "Next7Days onClick: lat to send through Intent " + currentLat);
+                                    Log.i(TAG, "Next7Days onClick: long name to send through Intent " + currentLong);
+                                    Intent intent = new Intent(MainActivityHome.this, MainActivityNext7Days.class);
+                                    intent.putExtra("name", city);
+                                    intent.putExtra("lat", String.valueOf(currentLat));
+                                    intent.putExtra("long", String.valueOf(currentLong));
+                                    startActivity(intent);
+                                }
+                            });
                             Log.i(TAG, "onSuccess: " + cityName + ", " + stateName + ", " + countryName);
 
                         } else {
@@ -195,20 +204,7 @@ public class MainActivityHome extends AppCompatActivity {
             }
         });
 
-        Next7Days.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String city = textCityName1.getText().toString();
-                Log.i(TAG, "Next7Days onClick: city name to send through Intent " + city);
-                Log.i(TAG, "Next7Days onClick: lat to send through Intent " + currentLat);
-                Log.i(TAG, "Next7Days onClick: long name to send through Intent " + currentLong);
-                Intent intent = new Intent(MainActivityHome.this, MainActivityNext7Days.class);
-                intent.putExtra("name", city);
-                intent.putExtra("lat", currentLat);
-                intent.putExtra("long", currentLong);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private void addControls() {
@@ -332,7 +328,7 @@ public class MainActivityHome extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            Log.i(TAG, "ListView ngang" + jsonObject.toString());
+                            Log.i(TAG, "ListView ngang" + jsonObject);
                             JSONArray jsonArrayHourly = jsonObject.getJSONArray("hourly");
                             for (int i = 0; i < jsonArrayHourly.length(); i++) {
                                 Log.i(TAG, "for jsonArrayHourly : " + jsonArrayHourly);
@@ -363,14 +359,9 @@ public class MainActivityHome extends AppCompatActivity {
                                 }
                                 WeatherItemNext7Days weatherItemNext7Days
                                         = new WeatherItemNext7Days(Day1, "", temp, imgIdInt);
-                                Log.i(TAG, "weatherItemNext7Days " + weatherItemNext7Days.toString());
+                                Log.i(TAG, "weatherItemNext7Days " + weatherItemNext7Days);
                                 weatherAdapter.add(weatherItemNext7Days);
                             }
-
-                            for (int i = 0; i < weatherAdapter.getCount(); i ++) {
-                                Log.i(TAG, weatherAdapter.getItem(i).toString());
-                            }
-                            Log.i(TAG, "setAdapter");
                             lv.setAdapter(weatherAdapter);
 
                         } catch (JSONException e) {

@@ -1,0 +1,791 @@
+Index: app/src/main/res/drawable/design_btn_search.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/design_btn_search.xml b/app/src/main/res/drawable/design_btn_search.xml
+new file mode 100644
+--- /dev/null	(date 1672161381972)
++++ b/app/src/main/res/drawable/design_btn_search.xml	(date 1672161381972)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <solid android:color="#F6F6F6"/>
++    <corners android:radius="30dp"/>
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_search_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_search_24.xml b/app/src/main/res/drawable/ic_search_24.xml
+new file mode 100644
+--- /dev/null	(date 1672161478118)
++++ b/app/src/main/res/drawable/ic_search_24.xml	(date 1672161478118)
+@@ -0,0 +1,5 @@
++<vector android:height="24dp" android:tint="#999999"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,4.99L20.49,19l-4.99,-5zM9.5,14C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14z"/>
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/detxem.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/detxem.xml b/app/src/main/res/drawable/detxem.xml
+new file mode 100644
+--- /dev/null	(date 1672161318238)
++++ b/app/src/main/res/drawable/detxem.xml	(date 1672161318238)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <corners android:topRightRadius="30dp"
++        android:bottomRightRadius="30dp"/>
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main_favorite.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivityFavorite\"\r\n    android:background=\"#FFF\">\r\n\r\n    <ImageView\r\n        android:id=\"@+id/img_back\"\r\n        android:layout_width=\"38dp\"\r\n        android:layout_height=\"38dp\"\r\n        android:layout_marginLeft=\"5dp\"\r\n        android:layout_marginTop=\"15dp\"\r\n        android:src=\"@drawable/left\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textThemTP\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"50dp\"\r\n        android:layout_marginLeft=\"50dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:fontFamily=\"@font/geomanist_medium\"\r\n        android:text=\"Thêm thành phố\"\r\n        android:textColor=\"#1F1E31\"\r\n        android:textSize=\"19dp\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/img_plus\"\r\n        android:layout_width=\"18dp\"\r\n        android:layout_height=\"18dp\"\r\n        android:src=\"@drawable/plus\"\r\n        android:layout_marginTop=\"24.5dp\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_marginRight=\"65dp\"\r\n        />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/img_edit\"\r\n        android:layout_width=\"20dp\"\r\n        android:layout_height=\"20dp\"\r\n        android:src=\"@drawable/edit\"\r\n        android:layout_marginTop=\"22dp\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:layout_marginRight=\"15dp\"\r\n        />\r\n\r\n    <ListView\r\n        android:id=\"@+id/listview_favorite\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"520dp\"\r\n        android:layout_below=\"@id/img_edit\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:divider=\"@null\"\r\n        android:dividerHeight=\"0dp\" />\r\n\r\n    <View\r\n        android:id=\"@+id/the_line\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"1dp\"\r\n        android:background=\"#CBD7DE\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginBottom=\"98dp\"\r\n        android:layout_marginLeft=\"35dp\"\r\n        android:layout_marginRight=\"35dp\"\r\n\r\n        />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/find_icon\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:src=\"@drawable/icon_find\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_marginBottom=\"55dp\"\r\n        />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/favorite_icon\"\r\n        android:layout_width=\"25dp\"\r\n        android:layout_height=\"25dp\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginLeft=\"253dp\"\r\n        android:layout_marginBottom=\"29dp\"\r\n        android:src=\"@drawable/favorite4\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/user_icon\"\r\n        android:layout_width=\"25dp\"\r\n        android:layout_height=\"25dp\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginLeft=\"330dp\"\r\n        android:layout_marginBottom=\"29dp\"\r\n        android:src=\"@drawable/userinfo\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/home_icon\"\r\n        android:layout_width=\"25dp\"\r\n        android:layout_height=\"25dp\"\r\n        android:src=\"@drawable/home\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginLeft=\"45dp\"\r\n        android:layout_marginBottom=\"30dp\"\r\n        />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/chart_icon\"\r\n        android:layout_width=\"25dp\"\r\n        android:layout_height=\"25dp\"\r\n        android:src=\"@drawable/line_chart\"\r\n        android:layout_alignParentBottom=\"true\"\r\n        android:layout_marginLeft=\"120dp\"\r\n        android:layout_marginBottom=\"28dp\"\r\n        />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main_favorite.xml b/app/src/main/res/layout/activity_main_favorite.xml
+--- a/app/src/main/res/layout/activity_main_favorite.xml	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/res/layout/activity_main_favorite.xml	(date 1672163125799)
+@@ -4,8 +4,8 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".MainActivityFavorite"
+-    android:background="#FFF">
++    android:background="#FFF"
++    tools:context=".MainActivityFavorite">
+ 
+     <ImageView
+         android:id="@+id/img_back"
+@@ -18,7 +18,7 @@
+     <TextView
+         android:id="@+id/textThemTP"
+         android:layout_width="match_parent"
+-        android:layout_height="50dp"
++        android:layout_height="30dp"
+         android:layout_marginLeft="50dp"
+         android:layout_marginTop="20dp"
+         android:fontFamily="@font/geomanist_medium"
+@@ -28,29 +28,54 @@
+ 
+     <ImageView
+         android:id="@+id/img_plus"
+-        android:layout_width="18dp"
+-        android:layout_height="18dp"
++        android:layout_width="15dp"
++        android:layout_height="15dp"
+         android:src="@drawable/plus"
+-        android:layout_marginTop="24.5dp"
++        android:layout_marginTop="27.5dp"
+         android:layout_alignParentRight="true"
+         android:layout_marginRight="65dp"
+         />
+ 
+-    <ImageView
+-        android:id="@+id/img_edit"
+-        android:layout_width="20dp"
+-        android:layout_height="20dp"
+-        android:src="@drawable/edit"
+-        android:layout_marginTop="22dp"
+-        android:layout_alignParentRight="true"
+-        android:layout_marginRight="15dp"
+-        />
++    <LinearLayout
++        android:id="@+id/llSearch"
++        android:layout_width="match_parent"
++        android:layout_height="40dp"
++        android:layout_below="@id/textThemTP"
++        android:layout_marginLeft="30dp"
++        android:layout_marginTop="20dp"
++        android:layout_marginRight="30dp"
++        android:background="@drawable/design_btn_search"
++        android:orientation="horizontal">
++
++        <RelativeLayout
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:gravity="center">
++
++            <ImageView
++                android:id="@+id/ibtnSearch"
++                android:layout_width="22dp"
++                android:layout_height="22dp"
++                android:layout_marginLeft="12dp"
++                android:background="@drawable/ic_search_24" />
++        </RelativeLayout>
++
++        <EditText
++            android:layout_width="match_parent"
++            android:layout_height="41dp"
++            android:layout_marginLeft="5dp"
++            android:background="@drawable/detxem"
++            android:fontFamily="@font/geomanist_regular"
++            android:hint="Nhập thành phố"
++            android:textSize="15dp" />
++
++    </LinearLayout>
+ 
+     <ListView
+         android:id="@+id/listview_favorite"
+         android:layout_width="match_parent"
+         android:layout_height="520dp"
+-        android:layout_below="@id/img_edit"
++        android:layout_below="@id/llSearch"
+         android:layout_marginTop="20dp"
+         android:divider="@null"
+         android:dividerHeight="0dp" />
+@@ -59,11 +84,11 @@
+         android:id="@+id/the_line"
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+-        android:background="#CBD7DE"
+         android:layout_alignParentBottom="true"
+-        android:layout_marginBottom="98dp"
+         android:layout_marginLeft="35dp"
+         android:layout_marginRight="35dp"
++        android:layout_marginBottom="98dp"
++        android:background="#CBD7DE"
+ 
+         />
+ 
+@@ -71,11 +96,10 @@
+         android:id="@+id/find_icon"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:src="@drawable/icon_find"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="55dp"
+-        />
++        android:src="@drawable/icon_find" />
+ 
+     <ImageView
+         android:id="@+id/favorite_icon"
+@@ -99,20 +123,19 @@
+         android:id="@+id/home_icon"
+         android:layout_width="25dp"
+         android:layout_height="25dp"
+-        android:src="@drawable/home"
+         android:layout_alignParentBottom="true"
+         android:layout_marginLeft="45dp"
+         android:layout_marginBottom="30dp"
+-        />
++        android:src="@drawable/home" />
+ 
+     <ImageView
+         android:id="@+id/chart_icon"
+         android:layout_width="25dp"
+         android:layout_height="25dp"
+-        android:src="@drawable/line_chart"
+         android:layout_alignParentBottom="true"
+         android:layout_marginLeft="120dp"
+         android:layout_marginBottom="28dp"
+-        />
++        android:src="@drawable/line_chart" />
++
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/weatherforecast/MainActivityFavorite.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.weatherforecast;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.ImageView;\r\nimport android.widget.ListView;\r\nimport android.widget.TextView;\r\n\r\npublic class MainActivityFavorite extends AppCompatActivity {\r\n\r\n    ImageView backIcon, btnAdd, btnEdit, userIcon, homeIcon, chartIcon, favoriteIcon, findIcon;\r\n    TextView nameTP;\r\n    ListView listView;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main_favorite);\r\n\r\n        backIcon = findViewById(R.id.img_back);\r\n        favoriteIcon = (ImageView) findViewById(R.id.favorite_icon);\r\n        chartIcon = (ImageView) findViewById(R.id.chart_icon);\r\n        userIcon = (ImageView) findViewById(R.id.user_icon);\r\n        homeIcon = (ImageView) findViewById(R.id.home_icon);\r\n        findIcon = (ImageView) findViewById(R.id.find_icon);\r\n\r\n        findIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(MainActivityFavorite.this, MainActivityFind.class));\r\n            }\r\n        });\r\n\r\n        backIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                onBackPressed();\r\n            }\r\n        });\r\n\r\n        homeIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(MainActivityFavorite.this,MainActivityHome.class));\r\n            }\r\n        });\r\n\r\n        userIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(MainActivityFavorite.this,MainActivityLoginByWhat.class));\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/weatherforecast/MainActivityFavorite.java b/app/src/main/java/com/example/weatherforecast/MainActivityFavorite.java
+--- a/app/src/main/java/com/example/weatherforecast/MainActivityFavorite.java	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/java/com/example/weatherforecast/MainActivityFavorite.java	(date 1672164240696)
+@@ -1,19 +1,47 @@
+ package com.example.weatherforecast;
+ 
++import androidx.annotation.Nullable;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.util.Log;
+ import android.view.View;
+ import android.widget.ImageView;
+ import android.widget.ListView;
+ import android.widget.TextView;
++import android.widget.Toast;
++
++import com.android.volley.Request;
++import com.android.volley.RequestQueue;
++import com.android.volley.Response;
++import com.android.volley.VolleyError;
++import com.android.volley.toolbox.StringRequest;
++import com.android.volley.toolbox.Volley;
++import com.google.android.gms.common.api.Status;
++import com.google.android.libraries.places.api.model.Place;
++import com.google.android.libraries.places.widget.Autocomplete;
++import com.google.android.libraries.places.widget.AutocompleteActivity;
++import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
++
++import org.json.JSONArray;
++import org.json.JSONException;
++import org.json.JSONObject;
++import java.util.Arrays;
++import java.util.List;
++
++import java.util.ArrayList;
+ 
+ public class MainActivityFavorite extends AppCompatActivity {
+ 
+     ImageView backIcon, btnAdd, btnEdit, userIcon, homeIcon, chartIcon, favoriteIcon, findIcon;
+     TextView nameTP;
+-    ListView listView;
++    ListView lv;
++    Place place;
++    private static final int AUTOCOMPLETE_REQUEST_CODE = 1;
++    WeatherAdapterNext7Days weatherAdapter;
++    ArrayList<WeatherItemNext7Days> weatherArray;
++    public static final String TAG = "MainActivityNext7Days";
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -26,6 +54,10 @@
+         userIcon = (ImageView) findViewById(R.id.user_icon);
+         homeIcon = (ImageView) findViewById(R.id.home_icon);
+         findIcon = (ImageView) findViewById(R.id.find_icon);
++        btnAdd = findViewById(R.id.img_plus);
++        lv = (ListView) findViewById(R.id.listview_favorite);
++
++        addControls();
+ 
+         findIcon.setOnClickListener(new View.OnClickListener() {
+             @Override
+@@ -55,8 +87,82 @@
+             }
+         });
+ 
++        btnAdd.setOnClickListener(view -> onSearchCalled());
++
++    }
++
++    private void addControls() {
++        weatherArray = new ArrayList<>();
++        weatherAdapter = new WeatherAdapterNext7Days(this, R.layout.custom_listview_favorite);
++    }
++
++    public void Get7DaysData(String latData, String longData) {
++        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityFavorite.this);
++        String url = "https://api.openweathermap.org/data/3.0/onecall?lat="
++                + latData + "&lon=" + longData
++                + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
++        Log.i(TAG,"homnaytesturl" + url);
++        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
++            @Override
++            public void onResponse(String response) {
++                try {
++                    JSONObject jsonObject = new JSONObject(response);
++                    JSONObject jsonObjectCurrent = jsonObject.getJSONObject("current");
++                    int temp = jsonObjectCurrent.getInt("temp");
++                    JSONArray jsonArrayList = jsonObjectCurrent.getJSONArray("weather");
++                    JSONObject jsonObjectList = jsonArrayList.getJSONObject(0);
++                    String description = jsonObjectList.getString("description");
++
++                    WeatherItemNext7Days weatherItemNext7Days
++                            = new WeatherItemNext7Days(description, "", temp, 0);
++
++                    weatherAdapter.add(weatherItemNext7Days);
++
++                    lv.setAdapter(weatherAdapter);
++                } catch (JSONException e) {
++                    e.printStackTrace();
++                }
++            }
++        }, new Response.ErrorListener() {
++            @Override
++            public void onErrorResponse(VolleyError error) {
++
++            }
++        });
++        requestQueue.add(stringRequest);
++    }
+ 
++    public void onSearchCalled() {
++        // Set the fields to specify which types of place data to return.
++        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG);
++        // Start the autocomplete intent.
++        Intent intent = new Autocomplete.IntentBuilder(
++                AutocompleteActivityMode.FULLSCREEN, fields)
++                .setCountry("VN")
++                .build(this);
++        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+     }
+ 
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
++        super.onActivityResult(requestCode, resultCode, data);
++        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
++            if (resultCode == RESULT_OK) {
++                place = Autocomplete.getPlaceFromIntent(data);
++                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId() + ", " + place.getAddress());
++                Toast.makeText(MainActivityFavorite.this, "ID: " + place.getId() + "address:" + place.getAddress() +
++                        "Name:" + place.getName() + " latlong: " + place.getLatLng(), Toast.LENGTH_LONG).show();
++                String address = place.getAddress();
++                // do query with address
+ 
++            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
++                // TODO: Handle the error.
++                Status status = Autocomplete.getStatusFromIntent(data);
++                Toast.makeText(MainActivityFavorite.this, "Error: " + status.getStatusMessage(), Toast.LENGTH_LONG).show();
++                Log.i(TAG, status.getStatusMessage());
++            } else if (resultCode == RESULT_CANCELED) {
++                // The user canceled the operation.
++            }
++        }
++    }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/weatherforecast/MainActivityLoading.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.weatherforecast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.Manifest;\r\nimport android.content.Intent;\r\nimport android.content.IntentSender;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\n\r\nimport com.google.android.gms.common.api.ResolvableApiException;\r\nimport com.google.android.gms.location.LocationRequest;\r\nimport com.google.android.gms.location.LocationServices;\r\nimport com.google.android.gms.location.LocationSettingsRequest;\r\nimport com.google.android.gms.location.LocationSettingsResponse;\r\nimport com.google.android.gms.location.Priority;\r\nimport com.google.android.gms.location.SettingsClient;\r\nimport com.google.android.gms.tasks.OnFailureListener;\r\nimport com.google.android.gms.tasks.Task;\r\n\r\nimport java.util.List;\r\n\r\nimport pub.devrel.easypermissions.EasyPermissions;\r\n\r\npublic class MainActivityLoading extends AppCompatActivity implements EasyPermissions.PermissionCallbacks{\r\n\r\n    private int RC_LOCATION_PERM = 124;\r\n    private static final String TAG = \"MainActivityLoading\";\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main_loading);\r\n        // Dùng try catch để tránh bị crash app\r\n\r\n\r\n        try {\r\n            requestLocationPermission();\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);\r\n//        new Handler().postDelayed(new Runnable() {\r\n//            @Override\r\n//            public void run() {\r\n//                startActivity(new Intent(MainActivityLoading.this,MainActivityHome.class));\r\n//                finish();\r\n//            }\r\n//        },5000);\r\n    }\r\n\r\n\r\n\r\n    private void requestLocationPermission() {\r\n        Log.i(TAG, \"requestLocationPermission\");\r\n        // Kiểm tra SDK\r\n        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {\r\n            return;\r\n        }\r\n\r\n        // Kiểm tra quyền đã được chấp thuận chưa\r\n        if (EasyPermissions.hasPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION)) {\r\n            Intent intent = new Intent(this, MainActivityHome.class);\r\n            startActivity(intent);\r\n        } else {\r\n            // Nếu chưa được chấp thuận thì yêu cầu chấp thuận\r\n            EasyPermissions.requestPermissions(\r\n                    this,\r\n                    getString(R.string.rationale_location),\r\n                    RC_LOCATION_PERM,\r\n                    Manifest.permission.ACCESS_FINE_LOCATION);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {\r\n        super.onRequestPermissionsResult(requestCode, permissions, grantResults);\r\n\r\n        // Forward results to EasyPermissions\r\n        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);\r\n    }\r\n\r\n    @Override\r\n    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {\r\n        Intent intent = new Intent(this, MainActivityHome.class);\r\n        startActivity(intent);\r\n    }\r\n\r\n    @Override\r\n    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {\r\n        finish();\r\n    }\r\n\r\n\r\n    //    // Yêu cầu quyền truy cập vị trí\r\n//    private void requestLocationPermission() {\r\n//        // Kiểm tra SDK\r\n//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {\r\n//            return;\r\n//        }\r\n//\r\n//        // Kiểm tra quyền đã được chấp thuận chưa\r\n//        if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {\r\n//            addMyLocationButton();\r\n//            Toast.makeText(this, \"Permission Granted\", Toast.LENGTH_SHORT).show();\r\n//        } else {\r\n//            // Nếu chưa được chấp thuận thì yêu cầu chấp thuận\r\n//            String[] permissions = {android.Manifest.permission.ACCESS_FINE_LOCATION};\r\n//            requestPermissions(permissions, 1);\r\n//        }\r\n//    }\r\n//\r\n//    // Hàm đề thêm nút MyLocationButton\r\n//    private void addMyLocationButton() {\r\n//        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)\r\n//                != getPackageManager().PERMISSION_GRANTED\r\n//\r\n//                &&\r\n//\r\n//                ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)\r\n//                        != getPackageManager().PERMISSION_GRANTED) {\r\n//            return;\r\n//        }\r\n//        mMap.setMyLocationEnabled(true);\r\n//        mMap.getUiSettings().setMyLocationButtonEnabled(true);\r\n//    }\r\n//\r\n//    // Kiểm tra kết quả Permission đã cho cho phéo hay chưa\r\n//    @Override\r\n//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {\r\n//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);\r\n//        if (requestCode == 1) {\r\n//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {\r\n//                addMyLocationButton();\r\n//                Toast.makeText(this, \"Permission Granted\", Toast.LENGTH_SHORT).show();\r\n//            } else {\r\n//                Toast.makeText(this, \"Permission Denied\", Toast.LENGTH_SHORT).show();\r\n//            }\r\n//        }\r\n//    }\r\n//\r\n//    // Method yêu cầu bật GPS\r\n//    private void requestLocation() {\r\n//        // LocationRequest Builder\r\n//        LocationRequest locationRequest = new LocationRequest.Builder(Request.Priority.PRIORITY_HIGH_ACCURACY)\r\n//                .setIntervalMillis(1000)\r\n//                .build();\r\n//\r\n//        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()\r\n//                .addLocationRequest(locationRequest);\r\n//\r\n//        // Lấy setting từ máy, để biết GPS đã bật chưa\r\n//        SettingsClient client = LocationServices.getSettingsClient(this);\r\n//\r\n//        // Task dùng để mở luồng (thread) mới để kiểm tra GPS\r\n//        Task<LocationSettingsResponse> task = client.checkLocationSettings(builder.build());\r\n//\r\n//        // Nếu GPS chưa bật thì mở cửa sổ yêu cầu bật GPS\r\n//        // thêm listener để bắt sự kiện khi người dùng chưa bật GPS (vì Task fail)\r\n//        task.addOnFailureListener(this, new OnFailureListener() {\r\n//            @Override\r\n//            public void onFailure(@NonNull Exception e) {\r\n//                if (e instanceof ResolvableApiException) {\r\n//                    try {\r\n//                        // Show the dialog by calling startResolutionForResult(),\r\n//                        // and check the result in onActivityResult().\r\n//                        ResolvableApiException resolvable = (ResolvableApiException) e;\r\n//                        resolvable.startResolutionForResult(MainActivity.this,\r\n//                                51);\r\n//                    } catch (IntentSender.SendIntentException sendEx) {\r\n//                        // Ignore the error.\r\n//                    }\r\n//                }\r\n//            }\r\n//        });\r\n//    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/weatherforecast/MainActivityLoading.java b/app/src/main/java/com/example/weatherforecast/MainActivityLoading.java
+--- a/app/src/main/java/com/example/weatherforecast/MainActivityLoading.java	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/java/com/example/weatherforecast/MainActivityLoading.java	(date 1672164240704)
+@@ -5,28 +5,17 @@
+ 
+ import android.Manifest;
+ import android.content.Intent;
+-import android.content.IntentSender;
+ import android.os.Build;
+ import android.os.Bundle;
+ import android.util.Log;
+ 
+-import com.google.android.gms.common.api.ResolvableApiException;
+-import com.google.android.gms.location.LocationRequest;
+-import com.google.android.gms.location.LocationServices;
+-import com.google.android.gms.location.LocationSettingsRequest;
+-import com.google.android.gms.location.LocationSettingsResponse;
+-import com.google.android.gms.location.Priority;
+-import com.google.android.gms.location.SettingsClient;
+-import com.google.android.gms.tasks.OnFailureListener;
+-import com.google.android.gms.tasks.Task;
+-
+ import java.util.List;
+ 
+ import pub.devrel.easypermissions.EasyPermissions;
+ 
+ public class MainActivityLoading extends AppCompatActivity implements EasyPermissions.PermissionCallbacks{
+ 
+-    private int RC_LOCATION_PERM = 124;
++    private final int RC_LOCATION_PERM = 124;
+     private static final String TAG = "MainActivityLoading";
+ 
+     @Override
+Index: app/src/main/java/com/example/weatherforecast/WeatherAdapterNext7Days.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.weatherforecast;\r\n\r\nimport android.content.Context;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.BaseAdapter;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> {\r\n    Context context;\r\n    private int resource;\r\n\r\n    public WeatherAdapterNext7Days(Context context, int resource) {\r\n        super(context, resource);\r\n        this.context = context;\r\n        this.resource = resource;\r\n    }\r\n\r\n    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {\r\n        View customView = LayoutInflater.from(context).inflate(resource, null);\r\n\r\n        // Ánh xạ thông qua customView (chưa có data)\r\n        TextView nextDay = customView.findViewById(R.id.Next_Day);\r\n        TextView Date = customView.findViewById(R.id.Date);\r\n        TextView temp = customView.findViewById(R.id.temp);\r\n        ImageView imgId = customView.findViewById(R.id.img_example);\r\n\r\n        TextView hourly = customView.findViewById(R.id.time_horizontal_listview);\r\n        TextView Date1 = customView.findViewById(R.id.null1);\r\n        TextView temp1 = customView.findViewById(R.id.temp_example);\r\n        ImageView imgId1 = customView.findViewById(R.id.anh_minh_hoa);\r\n\r\n        WeatherItemNext7Days weatherItem = getItem(position);\r\n\r\n        if (nextDay != null\r\n                || Date != null\r\n\r\n        ) {\r\n            nextDay.setText(weatherItem.getNextDay());\r\n            Date.setText(weatherItem.getDate());\r\n            temp.setText(weatherItem.getTemp() + \"°\");\r\n            imgId.setImageResource(weatherItem.getImgId());\r\n        }\r\n\r\n        if (hourly != null\r\n                || Date1 != null\r\n\r\n        ) {\r\n            hourly.setText(weatherItem.getNextDay());\r\n            Date1.setText(weatherItem.getDate());\r\n            temp1.setText(weatherItem.getTemp() + \"°\");\r\n            imgId1.setImageResource(weatherItem.getImgId());\r\n        }\r\n\r\n        return customView;\r\n    }\r\n\r\n//    @NonNull\r\n//    @Override\r\n//    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {\r\n//        WeatherItem weatherItem = getItem(position);\r\n//        if(convertView == null){\r\n//            convertView = LayoutInflater.from(getContext()).inflate(R.layout.custom_listview, parent, false);\r\n//        }\r\n//\r\n//        ImageView imageView = convertView.findViewById(R.id.img_example);\r\n//        TextView Date = convertView.findViewById(R.id.Date);\r\n//        TextView nextDay = convertView.findViewById(R.id.Next_Day);\r\n//        TextView temp = convertView.findViewById(R.id.temp);\r\n//\r\n//        Date.setText(weatherItem.date);\r\n//        nextDay.setText(weatherItem.nextDay);\r\n//        temp.setText(weatherItem.temp+\"°\");\r\n//\r\n//\r\n//        return super.getView(position, convertView, parent);\r\n//    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/weatherforecast/WeatherAdapterNext7Days.java b/app/src/main/java/com/example/weatherforecast/WeatherAdapterNext7Days.java
+--- a/app/src/main/java/com/example/weatherforecast/WeatherAdapterNext7Days.java	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/java/com/example/weatherforecast/WeatherAdapterNext7Days.java	(date 1672164131352)
+@@ -16,7 +16,7 @@
+ 
+ public class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> {
+     Context context;
+-    private int resource;
++    private final int resource;
+ 
+     public WeatherAdapterNext7Days(Context context, int resource) {
+         super(context, resource);
+@@ -38,28 +38,34 @@
+         TextView temp1 = customView.findViewById(R.id.temp_example);
+         ImageView imgId1 = customView.findViewById(R.id.anh_minh_hoa);
+ 
++        TextView favoriteName = customView.findViewById(R.id.time_horizontal_listview);
++        TextView favoriteDescription = customView.findViewById(R.id.null1);
++        TextView favoriteTemp = customView.findViewById(R.id.temp_example);
++        ImageView imgId2 = customView.findViewById(R.id.favoriteImg);
++
+         WeatherItemNext7Days weatherItem = getItem(position);
+ 
+-        if (nextDay != null
+-                || Date != null
+-
+-        ) {
++        if (nextDay != null || Date != null) {
+             nextDay.setText(weatherItem.getNextDay());
+             Date.setText(weatherItem.getDate());
+             temp.setText(weatherItem.getTemp() + "°");
+             imgId.setImageResource(weatherItem.getImgId());
+         }
+ 
+-        if (hourly != null
+-                || Date1 != null
+-
+-        ) {
++        if (hourly != null || Date1 != null) {
+             hourly.setText(weatherItem.getNextDay());
+             Date1.setText(weatherItem.getDate());
+             temp1.setText(weatherItem.getTemp() + "°");
+             imgId1.setImageResource(weatherItem.getImgId());
+         }
+ 
++        if (imgId2 != null || Date1 != null) {
++            favoriteName.setText(weatherItem.getNextDay());
++            favoriteDescription.setText(weatherItem.getDate());
++            favoriteTemp.setText(weatherItem.getTemp() + "°");
++            imgId2.setImageResource(weatherItem.getImgId());
++        }
++
+         return customView;
+     }
+ 
+Index: app/src/main/res/layout/custom_listview_favorite.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:gravity=\"center\"\r\n    android:padding=\"40dp\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/Them_Added\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Vũng Tàu\"\r\n        android:textSize=\"21dp\"\r\n        android:fontFamily=\"@font/geomanist_book\"\r\n        android:textColor=\"#1F1E31\"\r\n        />\r\n\r\n    <TextView\r\n        android:id=\"@+id/Do_C_Added\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"26°\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:textSize=\"21dp\"\r\n        android:fontFamily=\"@font/geomanist_regular\"\r\n        android:textColor=\"#1F1E31\"\r\n        />\r\n\r\n    <TextView\r\n        android:id=\"@+id/Description_Added\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Chủ yếu là mây\"\r\n        android:layout_alignParentRight=\"true\"\r\n        android:textSize=\"16dp\"\r\n        android:layout_below=\"@id/Do_C_Added\"\r\n        android:fontFamily=\"@font/geomanist_regular\"\r\n        android:textColor=\"#1F1E31\"\r\n        android:layout_marginTop=\"5dp\"\r\n        android:layout_marginRight=\"2dp\"\r\n        />\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/custom_listview_favorite.xml b/app/src/main/res/layout/custom_listview_favorite.xml
+--- a/app/src/main/res/layout/custom_listview_favorite.xml	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/res/layout/custom_listview_favorite.xml	(date 1672161927648)
+@@ -3,7 +3,8 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:gravity="center"
+-    android:padding="40dp">
++    android:padding="40dp"
++    android:layout_marginBottom="10dp">
+ 
+     <TextView
+         android:id="@+id/Them_Added"
+@@ -39,5 +40,10 @@
+         android:layout_marginTop="5dp"
+         android:layout_marginRight="2dp"
+         />
++    <ImageView
++        android:id="@+id/favoriteImg"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        />
+ 
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/weatherforecast/MainActivityNext7Days.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.weatherforecast;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.View;\r\nimport android.widget.ImageView;\r\nimport android.widget.ListView;\r\nimport android.widget.TextView;\r\n\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.StringRequest;\r\nimport com.android.volley.toolbox.Volley;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.ArrayList;\r\nimport java.util.Date;\r\n\r\npublic class MainActivityNext7Days extends AppCompatActivity {\r\n\r\n    ImageView backIcon;\r\n    TextView textName;\r\n    ListView lv;\r\n    WeatherAdapterNext7Days weatherAdapter;\r\n    ArrayList<WeatherItemNext7Days> weatherArray;\r\n    public static final String TAG = \"MainActivityNext7Days\";\r\n\r\n    @SuppressLint(\"MissingInflatedId\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main_next7days);\r\n\r\n//        imgId = (ImageView) findViewById(R.id.img_example);\r\n        backIcon = (ImageView) findViewById(R.id.img_back);\r\n        textName = (TextView) findViewById(R.id.textTenTP2);\r\n        lv = (ListView) findViewById(R.id.list_view);\r\n        lv.setAdapter(weatherAdapter);\r\n\r\n\r\n        addControls();\r\n\r\n        backIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                onBackPressed();\r\n            }\r\n        });\r\n\r\n        Intent intent = getIntent();\r\n        String city = intent.getStringExtra(\"name\");\r\n        String txtLat = intent.getStringExtra(\"lat\");\r\n        String txtLong = intent.getStringExtra(\"long\");\r\n        Get7DaysData(txtLat, txtLong);\r\n\r\n    }\r\n\r\n    private void addControls() {\r\n        weatherArray = new ArrayList<>();\r\n        weatherAdapter = new WeatherAdapterNext7Days(this, R.layout.custom_listview);\r\n    }\r\n\r\n    public void Get7DaysData(String latData, String longData) {\r\n        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityNext7Days.this);\r\n        String url = \"http://api.openweathermap.org/data/3.0/onecall?lat=\" + latData +\r\n                \"&lon=\" + longData +\r\n                \"&lang=vi\" +\r\n                BuildConfig.API_KEY\r\n                 /*\"7dc9f0e071501cb394623f1306fd2b0a\"*/;\r\n        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {\r\n            @Override\r\n            public void onResponse(String response) {\r\n                try {\r\n                    JSONObject jsonObject = new JSONObject(response);\r\n                    JSONObject jsonObjectCity = jsonObject.getJSONObject(\"city\");\r\n                    String name =  jsonObjectCity.getString(\"name\");\r\n                    textName.setText(name);\r\n\r\n                    JSONArray jsonArrayList = jsonObject.getJSONArray(\"list\");\r\n                    for(int i = 0; i < jsonArrayList.length(); i++){\r\n                        JSONObject jsonObjectList = jsonArrayList.getJSONObject(i);\r\n                        String ngay = jsonObjectList.getString(\"dt\");\r\n                        long l = Long.valueOf(ngay);\r\n                        Date date1 = new Date(l*1000L);\r\n                        Date date2 = new Date(l*1000L);\r\n                        SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat(\"EEEE\");\r\n                        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat(\"yyyy-MM-dd\");\r\n                        String Day1 = simpleDateFormat1.format(date1);\r\n                        String Day2 = simpleDateFormat2.format(date2);\r\n\r\n                        JSONObject jsonObjectMain = jsonObjectList.getJSONObject(\"main\");\r\n                        int temp = jsonObjectMain.getInt(\"temp\");\r\n                        JSONArray jsonObjectWeather = jsonObjectList.getJSONArray(\"weather\");\r\n                        JSONObject jsonObjectSubWeather = jsonObjectWeather.getJSONObject(0);\r\n                        String status = jsonObjectSubWeather.getString(\"main\");\r\n                        int imgIdInt = 0;\r\n                        if(status.equals(\"Clouds\"))\r\n                        {\r\n                            Log.i(\"MainAc\", \"them anh3 cloud\");\r\n                            imgIdInt = R.drawable.ic_cloudy;\r\n                        }\r\n                        else if(status.equals(\"Rain\")){\r\n                            imgIdInt = R.drawable.ic_rainy;\r\n                        }\r\n                        else if(status.equals(\"Snow\")){\r\n                            imgIdInt = R.drawable.ic_snowy;\r\n                        }\r\n                        else if(status.equals(\"Clear\")){\r\n                            imgIdInt = R.drawable.ic_sunnycloudy;\r\n                        }\r\n                        else{\r\n                            imgIdInt = R.drawable.ic_thunder;\r\n                        }\r\n                        weatherArray.add(new WeatherItemNext7Days(Day1, Day2, temp, imgIdInt));\r\n                    }\r\n                    weatherAdapter.notifyDataSetChanged();\r\n                } catch (JSONException e) {\r\n                    e.printStackTrace();\r\n                }\r\n            }\r\n        }, new Response.ErrorListener() {\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n\r\n            }\r\n        });\r\n        requestQueue.add(stringRequest);\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/weatherforecast/MainActivityNext7Days.java b/app/src/main/java/com/example/weatherforecast/MainActivityNext7Days.java
+--- a/app/src/main/java/com/example/weatherforecast/MainActivityNext7Days.java	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/java/com/example/weatherforecast/MainActivityNext7Days.java	(date 1672164127173)
+@@ -2,7 +2,6 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+-import android.annotation.SuppressLint;
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.util.Log;
+@@ -18,14 +17,17 @@
+ import com.android.volley.toolbox.StringRequest;
+ import com.android.volley.toolbox.Volley;
+ 
++
+ import org.json.JSONArray;
+ import org.json.JSONException;
+ import org.json.JSONObject;
+ 
+ import java.text.SimpleDateFormat;
+ import java.util.ArrayList;
++
+ import java.util.Date;
+ 
++
+ public class MainActivityNext7Days extends AppCompatActivity {
+ 
+     ImageView backIcon;
+@@ -35,7 +37,6 @@
+     ArrayList<WeatherItemNext7Days> weatherArray;
+     public static final String TAG = "MainActivityNext7Days";
+ 
+-    @SuppressLint("MissingInflatedId")
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+@@ -45,8 +46,6 @@
+         backIcon = (ImageView) findViewById(R.id.img_back);
+         textName = (TextView) findViewById(R.id.textTenTP2);
+         lv = (ListView) findViewById(R.id.list_view);
+-        lv.setAdapter(weatherAdapter);
+-
+ 
+         addControls();
+ 
+@@ -61,6 +60,7 @@
+         String city = intent.getStringExtra("name");
+         String txtLat = intent.getStringExtra("lat");
+         String txtLong = intent.getStringExtra("long");
++        textName.setText(city);
+         Get7DaysData(txtLat, txtLong);
+ 
+     }
+@@ -72,58 +72,50 @@
+ 
+     public void Get7DaysData(String latData, String longData) {
+         RequestQueue requestQueue = Volley.newRequestQueue(MainActivityNext7Days.this);
+-        String url = "http://api.openweathermap.org/data/3.0/onecall?lat=" + latData +
+-                "&lon=" + longData +
+-                "&lang=vi" +
+-                BuildConfig.API_KEY
+-                 /*"7dc9f0e071501cb394623f1306fd2b0a"*/;
++        String url = "https://api.openweathermap.org/data/3.0/onecall?lat="
++                + latData + "&lon=" + longData
++                + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
++        Log.i(TAG, "homnaytesturl" + url);
+         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+             @Override
+             public void onResponse(String response) {
+                 try {
+                     JSONObject jsonObject = new JSONObject(response);
+-                    JSONObject jsonObjectCity = jsonObject.getJSONObject("city");
+-                    String name =  jsonObjectCity.getString("name");
+-                    textName.setText(name);
+-
+-                    JSONArray jsonArrayList = jsonObject.getJSONArray("list");
+-                    for(int i = 0; i < jsonArrayList.length(); i++){
++                    JSONArray jsonArrayList = jsonObject.getJSONArray("daily");
++                    for (int i = 0; i < 7; i++) {
+                         JSONObject jsonObjectList = jsonArrayList.getJSONObject(i);
+                         String ngay = jsonObjectList.getString("dt");
+                         long l = Long.valueOf(ngay);
+-                        Date date1 = new Date(l*1000L);
+-                        Date date2 = new Date(l*1000L);
++                        Date date1 = new Date(l * 1000L);
++                        Date date2 = new Date(l * 1000L);
+                         SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("EEEE");
+-                        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
++                        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd MMM");
+                         String Day1 = simpleDateFormat1.format(date1);
+                         String Day2 = simpleDateFormat2.format(date2);
+ 
+-                        JSONObject jsonObjectMain = jsonObjectList.getJSONObject("main");
+-                        int temp = jsonObjectMain.getInt("temp");
++                        JSONObject jsonObjectMain = jsonObjectList.getJSONObject("temp");
++                        int temp = jsonObjectMain.getInt("day");
+                         JSONArray jsonObjectWeather = jsonObjectList.getJSONArray("weather");
+                         JSONObject jsonObjectSubWeather = jsonObjectWeather.getJSONObject(0);
+                         String status = jsonObjectSubWeather.getString("main");
+                         int imgIdInt = 0;
+-                        if(status.equals("Clouds"))
+-                        {
+-                            Log.i("MainAc", "them anh3 cloud");
++                        if (status.equals("Clouds")) {
+                             imgIdInt = R.drawable.ic_cloudy;
+-                        }
+-                        else if(status.equals("Rain")){
++                        } else if (status.equals("Rain")) {
+                             imgIdInt = R.drawable.ic_rainy;
+-                        }
+-                        else if(status.equals("Snow")){
++                        } else if (status.equals("Snow")) {
+                             imgIdInt = R.drawable.ic_snowy;
+-                        }
+-                        else if(status.equals("Clear")){
++                        } else if (status.equals("Clear")) {
+                             imgIdInt = R.drawable.ic_sunnycloudy;
+-                        }
+-                        else{
++                        } else {
+                             imgIdInt = R.drawable.ic_thunder;
+                         }
+-                        weatherArray.add(new WeatherItemNext7Days(Day1, Day2, temp, imgIdInt));
++                        WeatherItemNext7Days weatherItemNext7Days
++                                = new WeatherItemNext7Days(Day1, Day2, temp, imgIdInt);
++
++                        weatherAdapter.add(weatherItemNext7Days);
+                     }
+-                    weatherAdapter.notifyDataSetChanged();
++                    lv.setAdapter(weatherAdapter);
+                 } catch (JSONException e) {
+                     e.printStackTrace();
+                 }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_favorite.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_find.xml\" value=\"0.23550724637681159\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_home.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_loading.xml\" value=\"0.23550724637681159\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_login_by_what.xml\" value=\"0.36666666666666664\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_login_form.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_next7days.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_register_form.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/activity_profile.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/custom_horizontal_list.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/custom_listview.xml\" value=\"0.23550724637681159\" />\r\n        <entry key=\"..\\:/WeatherForecastLocation/app/src/main/res/layout/custom_listview_favorite.xml\" value=\"0.33\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/.idea/misc.xml	(date 1672161434307)
+@@ -3,6 +3,10 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
++        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/design_btn_search.xml" value="0.234" />
++        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/desing_fake_search.xml" value="0.234" />
++        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/detxem.xml" value="0.234" />
++        <entry key="..\:/WeatherForecastLocation/app/src/main/res/drawable/ic_search_24.xml" value="0.234" />
+         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_favorite.xml" value="0.33" />
+         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_find.xml" value="0.23550724637681159" />
+         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_home.xml" value="0.33" />
+Index: app/src/main/java/com/example/weatherforecast/MainActivityHome.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.weatherforecast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.core.app.ActivityCompat;\r\nimport androidx.core.content.ContextCompat;\r\n\r\nimport android.Manifest;\r\nimport android.annotation.SuppressLint;\r\nimport android.content.Intent;\r\nimport android.content.IntentSender;\r\nimport android.content.pm.PackageManager;\r\nimport android.location.Address;\r\nimport android.location.Geocoder;\r\nimport android.location.Location;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.View;\r\nimport android.widget.AdapterView;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageView;\r\nimport android.widget.ListView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.StringRequest;\r\nimport com.android.volley.toolbox.Volley;\r\nimport com.google.android.gms.common.api.ResolvableApiException;\r\nimport com.google.android.gms.location.FusedLocationProviderClient;\r\nimport com.google.android.gms.location.LocationAvailability;\r\nimport com.google.android.gms.location.LocationCallback;\r\nimport com.google.android.gms.location.LocationRequest;\r\nimport com.google.android.gms.location.LocationResult;\r\nimport com.google.android.gms.location.LocationServices;\r\nimport com.google.android.gms.location.LocationSettingsRequest;\r\nimport com.google.android.gms.location.LocationSettingsResponse;\r\nimport com.google.android.gms.location.Priority;\r\nimport com.google.android.gms.location.SettingsClient;\r\nimport com.google.android.gms.tasks.OnSuccessListener;\r\nimport com.google.android.gms.tasks.Task;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.io.IOException;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.ArrayList;\r\nimport java.util.Date;\r\nimport java.util.List;\r\nimport java.util.Locale;\r\nimport java.util.concurrent.TimeUnit;\r\n\r\npublic class MainActivityHome extends AppCompatActivity {\r\n\r\n    TextView textCityName1, textTime, textTempurature, textStatus, textHpa, textCloud, textWind, Next7Days;\r\n    ImageView imgAnh1, findIcon, favoriteIcon, chartIcon, userIcon, homeIcon;\r\n    ListView lv;\r\n    WeatherAdapterNext7Days weatherAdapter;\r\n    ArrayList<WeatherItemNext7Days> weatherArray;\r\n    String City = \"\";\r\n    private static final String TAG = \"MainActivityHome\";\r\n    // FusedLocationProviderClient - Main class for receiving location updates.\r\n    FusedLocationProviderClient fusedLocationProviderClient;\r\n    LocationRequest locationRequest;\r\n    LocationCallback locationCallback;\r\n    Location currentLocation;\r\n    double currentLat, currentLong;\r\n\r\n\r\n    @SuppressLint(\"MissingInflatedId\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main_home);\r\n\r\n        addControls();\r\n\r\n        Next7Days = (TextView) findViewById(R.id.Next7DaysUnderline);\r\n        textCityName1 = (TextView) findViewById(R.id.cityName1);\r\n        textTime = (TextView) findViewById(R.id.timeSet);\r\n        textTempurature = (TextView) findViewById(R.id.temperature);\r\n        textStatus = (TextView) findViewById(R.id.status);\r\n        textHpa = (TextView) findViewById(R.id.textHpa);\r\n        textCloud = (TextView) findViewById(R.id.textMay);\r\n        textWind = (TextView) findViewById(R.id.textGio);\r\n        imgAnh1 = (ImageView) findViewById(R.id.anh1);\r\n        findIcon = (ImageView) findViewById(R.id.find_icon);\r\n        favoriteIcon = (ImageView) findViewById(R.id.favorite_icon);\r\n        chartIcon = (ImageView) findViewById(R.id.chart_icon);\r\n        userIcon = (ImageView) findViewById(R.id.user_icon);\r\n        homeIcon = (ImageView) findViewById(R.id.home_icon);\r\n        lv = (ListView) findViewById(R.id.listview_today);\r\n\r\n        requestLocation();\r\n\r\n        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);\r\n        locationRequest = new LocationRequest.Builder(TimeUnit.SECONDS.toMillis(60))\r\n                .build();\r\n        locationCallback = new LocationCallback() {\r\n            @Override\r\n            public void onLocationAvailability(@NonNull LocationAvailability locationAvailability) {\r\n                super.onLocationAvailability(locationAvailability);\r\n            }\r\n\r\n            @Override\r\n            public void onLocationResult(@NonNull LocationResult locationResult) {\r\n                super.onLocationResult(locationResult);\r\n                if (locationResult.getLastLocation() != null) {\r\n                    //currentLocation = locationResult.getLocations()[0];\r\n                    double latitude = currentLocation.getLatitude();\r\n                    double longitude = currentLocation.getLongitude();\r\n                    Log.i(TAG, \"onLocationResult: \" + latitude + \" \" + longitude);\r\n                }\r\n            }\r\n        };\r\n\r\n        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)\r\n                != PackageManager.PERMISSION_GRANTED\r\n                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)\r\n                != PackageManager.PERMISSION_GRANTED) {\r\n            // TODO: Consider calling\r\n            //    ActivityCompat#requestPermissions\r\n            // here to request the missing permissions, and then overriding\r\n            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,\r\n            //                                          int[] grantResults)\r\n            // to handle the case where the user grants the permission. See the documentation\r\n            // for ActivityCompat#requestPermissions for more details.\r\n            return;\r\n        }\r\n\r\n        fusedLocationProviderClient.getLastLocation()\r\n                .addOnSuccessListener(this, new OnSuccessListener<Location>() {\r\n                    @Override\r\n                    public void onSuccess(Location location) {\r\n                        // Got last known location. In some rare situations this can be null.\r\n                        if (location != null) {\r\n                            // Logic to handle location object\r\n                            Log.i(TAG, \"onSuccess getLastLocation: \" + location.getLatitude() + \" \" + location.getLongitude());\r\n                            Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());\r\n                            List<Address> addresses = null;\r\n                            currentLong = location.getLongitude();\r\n                            currentLat = location.getLatitude();\r\n                            try {\r\n                                Log.i(TAG, \"Try get address\");\r\n                                addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);\r\n                                Log.i(TAG, addresses.toString());\r\n                            } catch (IOException e) {\r\n                                Log.i(TAG, \"catch \" + e.toString());\r\n                                e.printStackTrace();\r\n                            }\r\n                            String cityName = addresses.get(0).getLocality();\r\n                            textCityName1.setText(cityName);\r\n                            City = cityName;\r\n                            String stateName = addresses.get(0).getAddressLine(0);\r\n                            String countryName = addresses.get(0).getCountryName();\r\n\r\n                            if (City.length() > 0) {\r\n                                GetCurrentWeatherData(City);\r\n                            }\r\n                            GetCurrent1HourWeatherData(currentLat, currentLong);\r\n                            Log.i(TAG, \"onSuccess: \" + cityName + \", \" + stateName + \", \" + countryName);\r\n\r\n                        } else {\r\n                            Log.i(TAG, \"onSuccess getLastLocation: null\");\r\n                        }\r\n                    }\r\n                });\r\n\r\n\r\n        findIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(MainActivityHome.this, MainActivityFind.class));\r\n            }\r\n        });\r\n\r\n        favoriteIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(MainActivityHome.this, MainActivityFavorite.class));\r\n            }\r\n        });\r\n\r\n        userIcon.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                startActivity(new Intent(MainActivityHome.this, MainActivityLoginByWhat.class));\r\n            }\r\n        });\r\n\r\n        Next7Days.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                String city = textCityName1.getText().toString();\r\n                Log.i(TAG, \"Next7Days onClick: city name to send through Intent \" + city);\r\n                Log.i(TAG, \"Next7Days onClick: lat to send through Intent \" + currentLat);\r\n                Log.i(TAG, \"Next7Days onClick: long name to send through Intent \" + currentLong);\r\n                Intent intent = new Intent(MainActivityHome.this, MainActivityNext7Days.class);\r\n                intent.putExtra(\"name\", city);\r\n                intent.putExtra(\"lat\", currentLat);\r\n                intent.putExtra(\"long\", currentLong);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n    }\r\n\r\n    private void addControls() {\r\n        weatherAdapter = new WeatherAdapterNext7Days(this, R.layout.custom_horizontal_list);\r\n        weatherArray = new ArrayList<>();\r\n    }\r\n\r\n    private void requestLocation() {\r\n        Log.i(TAG, \"requestLocation GPS\");\r\n        // LocationRequest Builder\r\n        com.google.android.gms.location.LocationRequest locationRequest = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY)\r\n                .setIntervalMillis(1000)\r\n                .build();\r\n\r\n        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()\r\n                .addLocationRequest(locationRequest);\r\n\r\n        // Lấy setting từ máy, để biết GPS đã bật chưa\r\n        SettingsClient client = LocationServices.getSettingsClient(this);\r\n\r\n        // Task dùng để mở luồng (thread) mới để kiểm tra GPS\r\n        Task<LocationSettingsResponse> task = client.checkLocationSettings(builder.build());\r\n\r\n        Log.i(TAG, \"requestLocation GPS - prepare to add Listener\");\r\n        // Nếu GPS chưa bật thì mở cửa sổ yêu cầu bật GPS\r\n        // thêm listener để bắt sự kiện khi người dùng chưa bật GPS (vì Task fail)\r\n        task.addOnFailureListener(this, e -> {\r\n            Log.i(TAG, \"onFailure\");\r\n            if (e instanceof ResolvableApiException) {\r\n                try {\r\n                    // Show the dialog by calling startResolutionForResult(),\r\n                    // and check the result in onActivityResult().\r\n\r\n                    ResolvableApiException resolvable = (ResolvableApiException) e;\r\n                    resolvable.startResolutionForResult(this,\r\n                            51);\r\n                } catch (IntentSender.SendIntentException sendEx) {\r\n                    // Ignore the error.\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n    public void GetCurrentWeatherData(String data) {\r\n        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityHome.this);\r\n        String url = \"https://api.openweathermap.org/data/2.5/weather?q=\"\r\n                + data + \"&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662\";\r\n        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,\r\n                new Response.Listener<String>() {\r\n                    @Override\r\n                    public void onResponse(String response) {\r\n                        try {\r\n                            JSONObject jsonObject = new JSONObject(response);\r\n                            Log.i(TAG, jsonObject.toString());\r\n\r\n                            String day = jsonObject.getString(\"dt\");\r\n                            String name = jsonObject.getString(\"name\");\r\n                            textCityName1.setText(name);\r\n\r\n                            long l = Long.valueOf(day);\r\n                            Date date = new Date(l * 1000L);\r\n                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(\"EEEE\");\r\n                            String Day = simpleDateFormat.format(date);\r\n                            textTime.setText(Day);\r\n\r\n                            JSONArray jsonObjectWeather = jsonObject.getJSONArray(\"weather\");\r\n                            JSONObject jsonObjectSubWeather = jsonObjectWeather.getJSONObject(0);\r\n                            String status = jsonObjectSubWeather.getString(\"main\");\r\n\r\n                            textStatus.setText(status);\r\n                            if (status.equals(\"Clouds\")) {\r\n                                imgAnh1.setImageResource(R.drawable.ic_cloudy);\r\n                            } else if (status.equals(\"Rain\")) {\r\n                                imgAnh1.setImageResource(R.drawable.ic_rainy);\r\n                            } else if (status.equals(\"Snow\")) {\r\n                                imgAnh1.setImageResource(R.drawable.ic_snowy);\r\n                            } else if (status.equals(\"Clear\")) {\r\n                                imgAnh1.setImageResource(R.drawable.ic_sunnycloudy);\r\n                            } else {\r\n                                imgAnh1.setImageResource(R.drawable.ic_thunder);\r\n                            }\r\n\r\n                            JSONObject jsonObjectMain = jsonObject.getJSONObject(\"main\");\r\n                            int temp = jsonObjectMain.getInt(\"temp\");\r\n                            int pressure = jsonObjectMain.getInt(\"pressure\");\r\n                            textTempurature.setText(temp + \"°\");\r\n                            textHpa.setText(pressure + \"hpa\");\r\n\r\n                            JSONObject jsonObjectWind = jsonObject.getJSONObject(\"wind\");\r\n                            String wind = jsonObjectWind.getString(\"speed\");\r\n                            textWind.setText(wind + \"m/s\");\r\n\r\n                            JSONObject jsonObjectCloud = jsonObject.getJSONObject(\"clouds\");\r\n                            String cloud = jsonObjectCloud.getString(\"all\");\r\n                            textCloud.setText(cloud + \"%\");\r\n\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n                    }\r\n                },\r\n                new Response.ErrorListener() {\r\n                    @Override\r\n                    public void onErrorResponse(VolleyError error) {\r\n\r\n                    }\r\n                });\r\n        requestQueue.add(stringRequest);\r\n    }\r\n\r\n    public void GetCurrent1HourWeatherData(double lat, double lon) {\r\n        Log.i(TAG, \"GetCurrent1HourWeatherData \" + lat + \" \" + lon);\r\n        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityHome.this);\r\n        String url = \"https://api.openweathermap.org/data/3.0/onecall?lat=\"\r\n                + lat + \"&lon=\" + lon\r\n                + \"&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662\";\r\n        Log.i(TAG, \"GetCurrent1HourWeatherData url \" + url);\r\n        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,\r\n                new Response.Listener<String>() {\r\n                    @Override\r\n                    public void onResponse(String response) {\r\n                        try {\r\n                            JSONObject jsonObject = new JSONObject(response);\r\n                            Log.i(TAG, \"ListView ngang\" + jsonObject.toString());\r\n                            JSONArray jsonArrayHourly = jsonObject.getJSONArray(\"hourly\");\r\n                            for (int i = 0; i < jsonArrayHourly.length(); i++) {\r\n                                Log.i(TAG, \"for jsonArrayHourly : \" + jsonArrayHourly);\r\n                                JSONObject jsonObjectList = jsonArrayHourly.getJSONObject(i);\r\n                                String ngay = jsonObjectList.getString(\"dt\");\r\n                                long l = Long.valueOf(ngay);\r\n                                Date date1 = new Date(l * 1000L);\r\n                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(\"HH\");\r\n                                String Day1 = simpleDateFormat.format(date1);\r\n\r\n                                int temp = jsonObjectList.getInt(\"temp\");\r\n                                JSONArray jsonObjectWeather = jsonObjectList.getJSONArray(\"weather\");\r\n                                JSONObject jsonObjectSubWeather = jsonObjectWeather.getJSONObject(0);\r\n                                String status = jsonObjectSubWeather.getString(\"main\");\r\n\r\n                                int imgIdInt = 0;\r\n                                if (status.equals(\"Clouds\")) {\r\n                                    Log.i(\"MainAc\", \"them anh3 cloud\");\r\n                                    imgIdInt = R.drawable.ic_cloudy;\r\n                                } else if (status.equals(\"Rain\")) {\r\n                                    imgIdInt = R.drawable.ic_rainy;\r\n                                } else if (status.equals(\"Snow\")) {\r\n                                    imgIdInt = R.drawable.ic_snowy;\r\n                                } else if (status.equals(\"Clear\")) {\r\n                                    imgIdInt = R.drawable.ic_sunnycloudy;\r\n                                } else {\r\n                                    imgIdInt = R.drawable.ic_thunder;\r\n                                }\r\n                                WeatherItemNext7Days weatherItemNext7Days\r\n                                        = new WeatherItemNext7Days(Day1, \"\", temp, imgIdInt);\r\n                                Log.i(TAG, \"weatherItemNext7Days \" + weatherItemNext7Days.toString());\r\n                                weatherAdapter.add(weatherItemNext7Days);\r\n                            }\r\n\r\n                            for (int i = 0; i < weatherAdapter.getCount(); i ++) {\r\n                                Log.i(TAG, weatherAdapter.getItem(i).toString());\r\n                            }\r\n                            Log.i(TAG, \"setAdapter\");\r\n                            lv.setAdapter(weatherAdapter);\r\n\r\n                        } catch (JSONException e) {\r\n                            e.printStackTrace();\r\n                        }\r\n                    }\r\n                },\r\n                new Response.ErrorListener() {\r\n                    @Override\r\n                    public void onErrorResponse(VolleyError error) {\r\n\r\n                    }\r\n                });\r\n        requestQueue.add(stringRequest);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/weatherforecast/MainActivityHome.java b/app/src/main/java/com/example/weatherforecast/MainActivityHome.java
+--- a/app/src/main/java/com/example/weatherforecast/MainActivityHome.java	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/src/main/java/com/example/weatherforecast/MainActivityHome.java	(date 1672164131358)
+@@ -3,7 +3,6 @@
+ import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.core.app.ActivityCompat;
+-import androidx.core.content.ContextCompat;
+ 
+ import android.Manifest;
+ import android.annotation.SuppressLint;
+@@ -13,17 +12,12 @@
+ import android.location.Address;
+ import android.location.Geocoder;
+ import android.location.Location;
+-import android.os.Build;
+ import android.os.Bundle;
+ import android.util.Log;
+ import android.view.View;
+-import android.widget.AdapterView;
+-import android.widget.Button;
+-import android.widget.EditText;
+ import android.widget.ImageView;
+ import android.widget.ListView;
+ import android.widget.TextView;
+-import android.widget.Toast;
+ 
+ import com.android.volley.Request;
+ import com.android.volley.RequestQueue;
+@@ -71,7 +65,8 @@
+     LocationRequest locationRequest;
+     LocationCallback locationCallback;
+     Location currentLocation;
+-    double currentLat, currentLong;
++    double currentLat;
++    double currentLong;
+ 
+ 
+     @SuppressLint("MissingInflatedId")
+@@ -152,7 +147,7 @@
+                                 addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                                 Log.i(TAG, addresses.toString());
+                             } catch (IOException e) {
+-                                Log.i(TAG, "catch " + e.toString());
++                                Log.i(TAG, "catch " + e);
+                                 e.printStackTrace();
+                             }
+                             String cityName = addresses.get(0).getLocality();
+@@ -165,6 +160,20 @@
+                                 GetCurrentWeatherData(City);
+                             }
+                             GetCurrent1HourWeatherData(currentLat, currentLong);
++                            Next7Days.setOnClickListener(new View.OnClickListener() {
++                                @Override
++                                public void onClick(View view) {
++                                    String city = textCityName1.getText().toString();
++                                    Log.i(TAG, "Next7Days onClick: city name to send through Intent " + city);
++                                    Log.i(TAG, "Next7Days onClick: lat to send through Intent " + currentLat);
++                                    Log.i(TAG, "Next7Days onClick: long name to send through Intent " + currentLong);
++                                    Intent intent = new Intent(MainActivityHome.this, MainActivityNext7Days.class);
++                                    intent.putExtra("name", city);
++                                    intent.putExtra("lat", String.valueOf(currentLat));
++                                    intent.putExtra("long", String.valueOf(currentLong));
++                                    startActivity(intent);
++                                }
++                            });
+                             Log.i(TAG, "onSuccess: " + cityName + ", " + stateName + ", " + countryName);
+ 
+                         } else {
+@@ -195,20 +204,7 @@
+             }
+         });
+ 
+-        Next7Days.setOnClickListener(new View.OnClickListener() {
+-            @Override
+-            public void onClick(View view) {
+-                String city = textCityName1.getText().toString();
+-                Log.i(TAG, "Next7Days onClick: city name to send through Intent " + city);
+-                Log.i(TAG, "Next7Days onClick: lat to send through Intent " + currentLat);
+-                Log.i(TAG, "Next7Days onClick: long name to send through Intent " + currentLong);
+-                Intent intent = new Intent(MainActivityHome.this, MainActivityNext7Days.class);
+-                intent.putExtra("name", city);
+-                intent.putExtra("lat", currentLat);
+-                intent.putExtra("long", currentLong);
+-                startActivity(intent);
+-            }
+-        });
++
+     }
+ 
+     private void addControls() {
+@@ -332,7 +328,7 @@
+                     public void onResponse(String response) {
+                         try {
+                             JSONObject jsonObject = new JSONObject(response);
+-                            Log.i(TAG, "ListView ngang" + jsonObject.toString());
++                            Log.i(TAG, "ListView ngang" + jsonObject);
+                             JSONArray jsonArrayHourly = jsonObject.getJSONArray("hourly");
+                             for (int i = 0; i < jsonArrayHourly.length(); i++) {
+                                 Log.i(TAG, "for jsonArrayHourly : " + jsonArrayHourly);
+@@ -363,14 +359,9 @@
+                                 }
+                                 WeatherItemNext7Days weatherItemNext7Days
+                                         = new WeatherItemNext7Days(Day1, "", temp, imgIdInt);
+-                                Log.i(TAG, "weatherItemNext7Days " + weatherItemNext7Days.toString());
++                                Log.i(TAG, "weatherItemNext7Days " + weatherItemNext7Days);
+                                 weatherAdapter.add(weatherItemNext7Days);
+                             }
+-
+-                            for (int i = 0; i < weatherAdapter.getCount(); i ++) {
+-                                Log.i(TAG, weatherAdapter.getItem(i).toString());
+-                            }
+-                            Log.i(TAG, "setAdapter");
+                             lv.setAdapter(weatherAdapter);
+ 
+                         } catch (JSONException e) {
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'\r\n    id 'com.google.gms.google-services'\r\n}\r\n\r\nandroid {\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.weatherforecast\"\r\n        minSdk 21\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.4.2'\r\n    implementation 'com.google.android.material:material:1.6.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'com.google.android.gms:play-services-location:21.0.1'\r\n    implementation 'com.google.firebase:firebase-database:20.1.0'\r\n    implementation 'com.google.firebase:firebase-storage:20.1.0'\r\n    implementation 'com.google.firebase:firebase-auth:21.1.0'\r\n    implementation 'com.google.android.gms:play-services-auth:20.4.0'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    implementation 'de.hdodenhof:circleimageview:2.1.0'\r\n    implementation 'com.makeramen:roundedimageview:2.3.0'\r\n\r\n    implementation 'com.android.volley:volley:1.2.1'\r\n\r\n    // For developers using AndroidX in their applications\r\n    implementation 'pub.devrel:easypermissions:3.0.0'\r\n\r\n    // For developers using the Android Support Library\r\n    implementation 'pub.devrel:easypermissions:2.0.1'\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 96b74c65fc0080fc8db75711b62c357610ac9692)
++++ b/app/build.gradle	(date 1672163282938)
+@@ -39,6 +39,9 @@
+     implementation 'com.google.firebase:firebase-storage:20.1.0'
+     implementation 'com.google.firebase:firebase-auth:21.1.0'
+     implementation 'com.google.android.gms:play-services-auth:20.4.0'
++    implementation 'com.google.android.gms:play-services-places:17.0.0'
++    implementation 'androidx.room:room-compiler:2.3.0'
++    implementation 'com.google.android.libraries.places:places:2.4.0'
+     testImplementation 'junit:junit:4.13.2'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

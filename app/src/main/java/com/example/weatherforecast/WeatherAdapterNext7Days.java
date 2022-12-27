@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> {
     Context context;
-    private int resource;
+    private final int resource;
 
     public WeatherAdapterNext7Days(Context context, int resource) {
         super(context, resource);
@@ -38,26 +38,32 @@ public class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> 
         TextView temp1 = customView.findViewById(R.id.temp_example);
         ImageView imgId1 = customView.findViewById(R.id.anh_minh_hoa);
 
+        TextView favoriteName = customView.findViewById(R.id.time_horizontal_listview);
+        TextView favoriteDescription = customView.findViewById(R.id.null1);
+        TextView favoriteTemp = customView.findViewById(R.id.temp_example);
+        ImageView imgId2 = customView.findViewById(R.id.favoriteImg);
+
         WeatherItemNext7Days weatherItem = getItem(position);
 
-        if (nextDay != null
-                || Date != null
-
-        ) {
+        if (nextDay != null || Date != null) {
             nextDay.setText(weatherItem.getNextDay());
             Date.setText(weatherItem.getDate());
             temp.setText(weatherItem.getTemp() + "°");
             imgId.setImageResource(weatherItem.getImgId());
         }
 
-        if (hourly != null
-                || Date1 != null
-
-        ) {
+        if (hourly != null || Date1 != null) {
             hourly.setText(weatherItem.getNextDay());
             Date1.setText(weatherItem.getDate());
             temp1.setText(weatherItem.getTemp() + "°");
             imgId1.setImageResource(weatherItem.getImgId());
+        }
+
+        if (imgId2 != null || Date1 != null) {
+            favoriteName.setText(weatherItem.getNextDay());
+            favoriteDescription.setText(weatherItem.getDate());
+            favoriteTemp.setText(weatherItem.getTemp() + "°");
+            imgId2.setImageResource(weatherItem.getImgId());
         }
 
         return customView;

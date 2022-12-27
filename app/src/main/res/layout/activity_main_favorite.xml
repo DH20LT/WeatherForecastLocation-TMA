@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityFavorite"
-    android:background="#FFF">
+    android:background="#FFF"
+    tools:context=".MainActivityFavorite">
 
     <ImageView
         android:id="@+id/img_back"
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/textThemTP"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/geomanist_medium"
@@ -28,29 +28,54 @@
 
     <ImageView
         android:id="@+id/img_plus"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
         android:src="@drawable/plus"
-        android:layout_marginTop="24.5dp"
+        android:layout_marginTop="27.5dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="65dp"
         />
 
-    <ImageView
-        android:id="@+id/img_edit"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/edit"
-        android:layout_marginTop="22dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="15dp"
-        />
+    <LinearLayout
+        android:id="@+id/llSearch"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/textThemTP"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/design_btn_search"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ibtnSearch"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_search_24" />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/detxem"
+            android:fontFamily="@font/geomanist_regular"
+            android:hint="Nhập thành phố"
+            android:textSize="15dp" />
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listview_favorite"
         android:layout_width="match_parent"
         android:layout_height="520dp"
-        android:layout_below="@id/img_edit"
+        android:layout_below="@id/llSearch"
         android:layout_marginTop="20dp"
         android:divider="@null"
         android:dividerHeight="0dp" />
@@ -59,11 +84,11 @@
         android:id="@+id/the_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#CBD7DE"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="98dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="98dp"
+        android:background="#CBD7DE"
 
         />
 
@@ -71,11 +96,10 @@
         android:id="@+id/find_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_find"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="55dp"
-        />
+        android:src="@drawable/icon_find" />
 
     <ImageView
         android:id="@+id/favorite_icon"
@@ -99,20 +123,19 @@
         android:id="@+id/home_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/home"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="30dp"
-        />
+        android:src="@drawable/home" />
 
     <ImageView
         android:id="@+id/chart_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/line_chart"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="120dp"
         android:layout_marginBottom="28dp"
-        />
+        android:src="@drawable/line_chart" />
+
 
 </RelativeLayout>
