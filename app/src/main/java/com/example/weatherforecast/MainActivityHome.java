@@ -158,8 +158,11 @@ public class MainActivityHome extends AppCompatActivity {
                             String stateName = addresses.get(0).getAddressLine(0);
                             String countryName = addresses.get(0).getCountryName();
 
+                            if (City.length() > 0) {
+                                GetCurrentWeatherData(City);
+                            }
                             Log.i(TAG, "onSuccess: " + cityName + ", " + stateName + ", " + countryName);
-                            GetCurrentWeatherData(City);
+
                         } else
                         {
                             Log.i(TAG, "onSuccess getLastLocation: null");
@@ -203,10 +206,6 @@ public class MainActivityHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        if (City.length() > 0) {
-            GetCurrentWeatherData(City);
-        }
     }
 
     private void requestLocation() {
@@ -309,71 +308,6 @@ public class MainActivityHome extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                    }
-                });
-        requestQueue.add(stringRequest);
-    }
-
-    public void GetCurrent3HoursWeatherData(String data) {
-        Log.i(TAG, "GetCurrent3HoursWeatherData");
-        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityHome.this);
-        String url = "https://api.openweathermap.org/data/2.5/forecast?q="+data+"&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.i(TAG, "onResponse");
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String day = jsonObject.getString("dt");
-                            String name = jsonObject.getString("name");
-                            textCityName1.setText(name);
-
-                            long l = Long.valueOf(day);
-                            Date date = new Date(l * 1000L);
-                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH");
-                            String Day = simpleDateFormat.format(date);
-                            textTime.setText(Day);
-
-                            JSONArray jsonObjectWeather = jsonObject.getJSONArray("weather");
-                            JSONObject jsonObjectSubWeather = jsonObjectWeather.getJSONObject(0);
-                            String status = jsonObjectSubWeather.getString("main");
-
-                            int imgIdInt = 0;
-                            if(status.equals("Clouds"))
-                            {
-                                Log.i("MainAc", "them anh3 cloud");
-                                imgIdInt = R.drawable.ic_cloudy;
-                            }
-                            else if(status.equals("Rain")){
-                                imgIdInt = R.drawable.ic_rainy;
-                            }
-                            else if(status.equals("Snow")){
-                                imgIdInt = R.drawable.ic_snowy;
-                            }
-                            else if(status.equals("Clear")){
-                                imgIdInt = R.drawable.ic_sunnycloudy;
-                            }
-                            else{
-                                imgIdInt = R.drawable.ic_thunder;
-                            }
-
-                            JSONObject jsonObjectMain = jsonObject.getJSONObject("main");
-                            int temp = jsonObjectMain.getInt("temp");
-                            textTempurature.setText(temp + "°");
-
-                            weatherArray.add(new WeatherItemNext7Days(Day, "", temp, imgIdInt));
-                            weatherAdapter.notifyDataSetChanged();
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i(TAG, "onErrorResponse " + error);
                     }
                 });
         requestQueue.add(stringRequest);
