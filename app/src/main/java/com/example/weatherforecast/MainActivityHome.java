@@ -322,6 +322,7 @@ public class MainActivityHome extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        Log.i(TAG, "onResponse");
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String day = jsonObject.getString("dt");
@@ -372,7 +373,7 @@ public class MainActivityHome extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Log.i(TAG, "onErrorResponse " + error);
                     }
                 });
         requestQueue.add(stringRequest);
