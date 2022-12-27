@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
-    <string name="my_text"><u>Next 7 Days</u></string>
+    <string name="my_text"><u>Xem 7 ngày</u></string>
     <string name="my_text_sign_in"><u>Đăng ký</u></string>
     <string name="rationale_location">This app needs access to your location to know where you are.</string>
+    <string name="my_text_sign_up"><u>Đăng nhập</u></string>
+
 </resources>

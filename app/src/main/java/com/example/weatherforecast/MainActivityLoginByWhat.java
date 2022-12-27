@@ -89,6 +89,22 @@ public class MainActivityLoginByWhat extends AppCompatActivity {
                 startActivity(new Intent(MainActivityLoginByWhat.this,MainActivityFavorite.class));
             }
         });
+
+        btnAccountLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivityLoginByWhat.this,MainActivityLoginForm.class));
+            }
+        });
+
+        btnDangKy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivityLoginByWhat.this,MainActivityRegisterForm.class));
+            }
+        });
+
+
     }
 
     @Override

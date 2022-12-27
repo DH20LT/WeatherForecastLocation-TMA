@@ -17,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -79,6 +80,8 @@ public class MainActivityHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
 
+        addControls();
+
         Next7Days = (TextView) findViewById(R.id.Next7DaysUnderline);
         textCityName1 = (TextView) findViewById(R.id.cityName1);
         textTime = (TextView) findViewById(R.id.timeSet);
@@ -94,9 +97,6 @@ public class MainActivityHome extends AppCompatActivity {
         userIcon = (ImageView) findViewById(R.id.user_icon);
         homeIcon = (ImageView) findViewById(R.id.home_icon);
         lv = (ListView) findViewById(R.id.listview_today);
-        weatherArray = new ArrayList<>();
-        weatherAdapter = new WeatherAdapterNext7Days(this, weatherArray);
-        lv.setAdapter(weatherAdapter);
 
         requestLocation();
 
@@ -148,8 +148,11 @@ public class MainActivityHome extends AppCompatActivity {
                             currentLong = location.getLongitude();
                             currentLat = location.getLatitude();
                             try {
+                                Log.i(TAG, "Try get address");
                                 addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                                Log.i(TAG, addresses.toString());
                             } catch (IOException e) {
+                                Log.i(TAG, "catch " + e.toString());
                                 e.printStackTrace();
                             }
                             String cityName = addresses.get(0).getLocality();
@@ -161,10 +164,10 @@ public class MainActivityHome extends AppCompatActivity {
                             if (City.length() > 0) {
                                 GetCurrentWeatherData(City);
                             }
+                            GetCurrent1HourWeatherData(currentLat, currentLong);
                             Log.i(TAG, "onSuccess: " + cityName + ", " + stateName + ", " + countryName);
 
-                        } else
-                        {
+                        } else {
                             Log.i(TAG, "onSuccess getLastLocation: null");
                         }
                     }
@@ -208,6 +211,11 @@ public class MainActivityHome extends AppCompatActivity {
         });
     }
 
+    private void addControls() {
+        weatherAdapter = new WeatherAdapterNext7Days(this, R.layout.custom_horizontal_list);
+        weatherArray = new ArrayList<>();
+    }
+
     private void requestLocation() {
         Log.i(TAG, "requestLocation GPS");
         // LocationRequest Builder
@@ -245,18 +253,16 @@ public class MainActivityHome extends AppCompatActivity {
     }
 
     public void GetCurrentWeatherData(String data) {
-        Log.i(TAG, "GetCurrentWeatherData " + data);
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivityHome.this);
         String url = "https://api.openweathermap.org/data/2.5/weather?q="
                 + data + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
-        Log.i(TAG, url);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            Log.i(TAG, jsonObject.toString() );
+                            Log.i(TAG, jsonObject.toString());
 
                             String day = jsonObject.getString("dt");
                             String name = jsonObject.getString("name");
@@ -298,6 +304,74 @@ public class MainActivityHome extends AppCompatActivity {
                             JSONObject jsonObjectCloud = jsonObject.getJSONObject("clouds");
                             String cloud = jsonObjectCloud.getString("all");
                             textCloud.setText(cloud + "%");
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        requestQueue.add(stringRequest);
+    }
+
+    public void GetCurrent1HourWeatherData(double lat, double lon) {
+        Log.i(TAG, "GetCurrent1HourWeatherData " + lat + " " + lon);
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityHome.this);
+        String url = "https://api.openweathermap.org/data/3.0/onecall?lat="
+                + lat + "&lon=" + lon
+                + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
+        Log.i(TAG, "GetCurrent1HourWeatherData url " + url);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            Log.i(TAG, "ListView ngang" + jsonObject.toString());
+                            JSONArray jsonArrayHourly = jsonObject.getJSONArray("hourly");
+                            for (int i = 0; i < jsonArrayHourly.length(); i++) {
+                                Log.i(TAG, "for jsonArrayHourly : " + jsonArrayHourly);
+                                JSONObject jsonObjectList = jsonArrayHourly.getJSONObject(i);
+                                String ngay = jsonObjectList.getString("dt");
+                                long l = Long.valueOf(ngay);
+                                Date date1 = new Date(l * 1000L);
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH");
+                                String Day1 = simpleDateFormat.format(date1);
+
+                                int temp = jsonObjectList.getInt("temp");
+                                JSONArray jsonObjectWeather = jsonObjectList.getJSONArray("weather");
+                                JSONObject jsonObjectSubWeather = jsonObjectWeather.getJSONObject(0);
+                                String status = jsonObjectSubWeather.getString("main");
+
+                                int imgIdInt = 0;
+                                if (status.equals("Clouds")) {
+                                    Log.i("MainAc", "them anh3 cloud");
+                                    imgIdInt = R.drawable.ic_cloudy;
+                                } else if (status.equals("Rain")) {
+                                    imgIdInt = R.drawable.ic_rainy;
+                                } else if (status.equals("Snow")) {
+                                    imgIdInt = R.drawable.ic_snowy;
+                                } else if (status.equals("Clear")) {
+                                    imgIdInt = R.drawable.ic_sunnycloudy;
+                                } else {
+                                    imgIdInt = R.drawable.ic_thunder;
+                                }
+                                WeatherItemNext7Days weatherItemNext7Days
+                                        = new WeatherItemNext7Days(Day1, "", temp, imgIdInt);
+                                Log.i(TAG, "weatherItemNext7Days " + weatherItemNext7Days.toString());
+                                weatherAdapter.add(weatherItemNext7Days);
+                            }
+
+                            for (int i = 0; i < weatherAdapter.getCount(); i ++) {
+                                Log.i(TAG, weatherAdapter.getItem(i).toString());
+                            }
+                            Log.i(TAG, "setAdapter");
+                            lv.setAdapter(weatherAdapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

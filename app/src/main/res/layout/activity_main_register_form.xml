@@ -202,7 +202,7 @@
                 android:layout_width="260dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
+
                 android:background="@drawable/background_for_login_button"
                 android:fontFamily="@font/geomanist_light"
                 android:gravity="center"
@@ -210,6 +210,36 @@
                 android:textColor="#24609B"
                 android:textFontWeight="700"
                 android:textSize="16dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:layout_marginBottom="30dp">
+
+                <TextView
+                    android:id="@+id/Accounted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/geomanist_regular"
+                    android:text="Đã có tài khoản?"
+                    android:textColor="#24609B"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/btnDangNhap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/Accounted"
+                    android:fontFamily="@font/geomanist_regular"
+                    android:text="@string/my_text_sign_up"
+                    android:textColor="#24609B"
+                    android:textSize="16dp"
+                    />
+
+            </RelativeLayout>
 
 
         </LinearLayout>

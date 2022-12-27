@@ -28,8 +28,8 @@ import java.util.Date;
 
 public class MainActivityNext7Days extends AppCompatActivity {
 
-    ImageView backIcon, imgId;
-    TextView textName, test;
+    ImageView backIcon;
+    TextView textName;
     ListView lv;
     WeatherAdapterNext7Days weatherAdapter;
     ArrayList<WeatherItemNext7Days> weatherArray;
@@ -45,9 +45,10 @@ public class MainActivityNext7Days extends AppCompatActivity {
         backIcon = (ImageView) findViewById(R.id.img_back);
         textName = (TextView) findViewById(R.id.textTenTP2);
         lv = (ListView) findViewById(R.id.list_view);
-        weatherArray = new ArrayList<>();
-        weatherAdapter = new WeatherAdapterNext7Days(this, weatherArray);
         lv.setAdapter(weatherAdapter);
+
+
+        addControls();
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,11 @@ public class MainActivityNext7Days extends AppCompatActivity {
         String txtLong = intent.getStringExtra("long");
         Get7DaysData(txtLat, txtLong);
 
+    }
+
+    private void addControls() {
+        weatherArray = new ArrayList<>();
+        weatherAdapter = new WeatherAdapterNext7Days(this, R.layout.custom_listview);
     }
 
     public void Get7DaysData(String latData, String longData) {

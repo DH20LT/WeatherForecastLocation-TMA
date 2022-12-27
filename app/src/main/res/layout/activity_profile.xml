@@ -8,6 +8,15 @@
     android:background="#fff">
 
     <ImageView
+        android:id="@+id/sign_out"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/sign_out3"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
         android:id="@+id/img_back"
         android:layout_width="38dp"
         android:layout_height="38dp"
@@ -18,43 +27,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        >
+        android:orientation="vertical">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:src="@drawable/aether"
-            app:riv_corner_radius="100dp"/>
+            app:riv_corner_radius="100dp" />
         <!--            app:riv_border_width="5dp"-->
         <!--            app:riv_border_color="#5D70FB"/>-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TMA"
-            android:textSize="20dp"
-            android:fontFamily="@font/geomanist_bold"
-            android:textColor="@color/black"
             android:layout_marginTop="5dp"
-            />
+            android:fontFamily="@font/geomanist_bold"
+            android:text="TMA"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@tmaproplayer"
-            />
+            android:text=" @tmaproplayer" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:textAllCaps="false"
-            android:fontFamily="@font/geomanist_medium"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            />
+            android:fontFamily="@font/geomanist_medium"
+            android:text="Edit Profile"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
@@ -84,18 +89,17 @@
         android:id="@+id/favorite_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/favorite3"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="253dp"
         android:layout_marginBottom="29dp"
-        />
+        android:src="@drawable/favorite3" />
 
     <ImageView
         android:id="@+id/user_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="340dp"
+        android:layout_marginLeft="330dp"
         android:layout_marginBottom="29dp"
         android:src="@drawable/userinfo1" />
 
@@ -103,10 +107,11 @@
         android:id="@+id/home_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:src="@drawable/home"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/home" />
+        />
 
     <ImageView
         android:id="@+id/chart_icon"

@@ -4,12 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_favorite.xml" value="0.33" />
-        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_home.xml" value="0.1707193515704154" />
-        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_login_form.xml" value="0.5" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_find.xml" value="0.23550724637681159" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_home.xml" value="0.33" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_loading.xml" value="0.23550724637681159" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_login_by_what.xml" value="0.36666666666666664" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_login_form.xml" value="0.33" />
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_next7days.xml" value="0.33" />
-        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_register_form.xml" value="0.5" />
-        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_profile.xml" value="0.358695652173913" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_main_register_form.xml" value="0.33" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/custom_horizontal_list.xml" value="0.33" />
+        <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/custom_listview.xml" value="0.23550724637681159" />
         <entry key="..\:/WeatherForecastLocation/app/src/main/res/layout/custom_listview_favorite.xml" value="0.33" />
       </map>
     </option>

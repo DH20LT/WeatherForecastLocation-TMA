@@ -55,11 +55,21 @@
         />
 
     <ImageView
+        android:id="@+id/find_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_find"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        />
+
+    <ImageView
         android:id="@+id/favorite_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="253dp"
         android:layout_marginBottom="29dp"
         android:src="@drawable/favorite3" />
 
@@ -68,7 +78,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="340dp"
+        android:layout_marginLeft="330dp"
         android:layout_marginBottom="29dp"
         android:src="@drawable/userinfo" />
 
@@ -76,10 +86,11 @@
         android:id="@+id/home_icon"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:src="@drawable/home"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/home" />
+        />
 
     <ImageView
         android:id="@+id/chart_icon"
