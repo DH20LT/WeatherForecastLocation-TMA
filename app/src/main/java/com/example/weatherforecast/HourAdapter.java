@@ -42,8 +42,15 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.ViewHolder> {
         Log.i(TAG, "onBindViewHolder");
         WeatherItemNext7Days weatherItem = mWeatherItems.get(position);
 
+        Log.i(TAG, "onBindViewHolder: Temp " + weatherItem.getTemp());
+
         holder.timeHorizontal.setText(weatherItem.getNextDay());
-        //holder.nhietDo.setText(weatherItem.getTemp());
+        try {
+            holder.nhietDo.setText(String.valueOf(weatherItem.getTemp()) + "°");
+        } catch (Exception e) {
+            Log.i(TAG, "onBindViewHolder error: " + e.getMessage());
+            e.printStackTrace();
+        }
         holder.anhMinhHoa.setImageResource(R.drawable.ic_baseline_cloud_24);
     }
 

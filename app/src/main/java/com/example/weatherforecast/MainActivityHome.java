@@ -332,6 +332,7 @@ public class MainActivityHome extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             Log.i(TAG, "ListView ngang" + jsonObject);
                             JSONArray jsonArrayHourly = jsonObject.getJSONArray("hourly");
+
                             for (int i = 0; i < jsonArrayHourly.length(); i++) {
                                 Log.i(TAG, "for jsonArrayHourly : " + jsonArrayHourly);
                                 JSONObject jsonObjectList = jsonArrayHourly.getJSONObject(i);
