@@ -3,6 +3,8 @@ package com.example.weatherforecast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -55,7 +57,7 @@ public class MainActivityHome extends AppCompatActivity {
 
     TextView textCityName1, textTime, textTempurature, textStatus, textHpa, textCloud, textWind, Next7Days;
     ImageView imgAnh1, findIcon, favoriteIcon, chartIcon, userIcon, homeIcon;
-    ListView lv;
+    RecyclerView lv;
     WeatherAdapterNext7Days weatherAdapter;
     ArrayList<WeatherItemNext7Days> weatherArray;
     String City = "";
@@ -67,7 +69,7 @@ public class MainActivityHome extends AppCompatActivity {
     Location currentLocation;
     double currentLat;
     double currentLong;
-
+    HourAdapter hourAdapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -91,7 +93,7 @@ public class MainActivityHome extends AppCompatActivity {
         chartIcon = (ImageView) findViewById(R.id.chart_icon);
         userIcon = (ImageView) findViewById(R.id.user_icon);
         homeIcon = (ImageView) findViewById(R.id.home_icon);
-        lv = (ListView) findViewById(R.id.listview_today);
+        lv = findViewById(R.id.listview_today);
 
         requestLocation();
 
@@ -361,9 +363,15 @@ public class MainActivityHome extends AppCompatActivity {
                                         = new WeatherItemNext7Days(Day1, "", temp, imgIdInt);
                                 Log.i(TAG, "weatherItemNext7Days " + weatherItemNext7Days);
                                 weatherAdapter.add(weatherItemNext7Days);
+                                weatherArray.add(weatherItemNext7Days);
                             }
-                            lv.setAdapter(weatherAdapter);
-
+                            for (int i = 0; i < weatherArray.size(); i++) {
+                                Log.i(TAG, "weatherArray " + weatherArray.get(i));
+                            }
+                            hourAdapter = new HourAdapter(getApplicationContext(), weatherArray);
+                            lv.setAdapter(hourAdapter);
+                            lv.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
+                                    LinearLayoutManager.HORIZONTAL, false));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

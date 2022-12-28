@@ -207,15 +207,13 @@
         android:textColor="#24609B"
         android:textSize="18dp" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listview_today"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/today"
-        android:layout_marginLeft="12dp"
+        android:layout_margin="12dp"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-
         />
 
 
