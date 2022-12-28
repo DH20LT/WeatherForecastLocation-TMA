@@ -205,9 +205,32 @@ public class MainActivityFavorite extends AppCompatActivity {
                         String.valueOf(place.getLatLng().latitude),
                         String.valueOf(place.getLatLng().longitude)
                 );
-                favorite.push().setValue(place1);
-                placeList.add(new WeatherItemNext7Days(place.getName()));
-                lv.setAdapter(placeList);
+
+                // add data to firebase but unique
+                favorite.get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DataSnapshot dataSnapshot = (DataSnapshot) task.getResult();
+                        if (dataSnapshot.exists()) {
+                            Log.i(TAG, "onCreate: " + dataSnapshot.getValue());
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                String name = snapshot.child("name").getValue(String.class);
+                                String lat = snapshot.child("lat").getValue(String.class);
+                                String lon = snapshot.child("lon").getValue(String.class);
+                                if (name.equals(place.getName())) {
+                                    Toast.makeText(MainActivityFavorite.this, "Đã có trong danh sách", Toast.LENGTH_SHORT).show();
+                                    return;
+                                } else {
+                                    favorite.push().setValue(place1);
+                                    placeList.add(new WeatherItemNext7Days(place.getName()));
+                                    lv.setAdapter(placeList);
+                                    Toast.makeText(MainActivityFavorite.this, "Đã thêm thành công", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                        }
+                    }
+                });
+
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
                 // TODO: Handle the error.
                 Status status = Autocomplete.getStatusFromIntent(data);
