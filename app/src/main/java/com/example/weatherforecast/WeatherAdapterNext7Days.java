@@ -38,9 +38,9 @@ public class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> 
         TextView temp1 = customView.findViewById(R.id.temp_example);
         ImageView imgId1 = customView.findViewById(R.id.anh_minh_hoa);
 
-        TextView favoriteName = customView.findViewById(R.id.time_horizontal_listview);
-        TextView favoriteDescription = customView.findViewById(R.id.null1);
-        TextView favoriteTemp = customView.findViewById(R.id.temp_example);
+        TextView favoriteName = customView.findViewById(R.id.Them_Added);
+        TextView favoriteDescription = customView.findViewById(R.id.Description_Added);
+        TextView favoriteTemp = customView.findViewById(R.id.Do_C_Added);
         ImageView imgId2 = customView.findViewById(R.id.favoriteImg);
 
         WeatherItemNext7Days weatherItem = getItem(position);
@@ -59,10 +59,11 @@ public class WeatherAdapterNext7Days extends ArrayAdapter<WeatherItemNext7Days> 
             imgId1.setImageResource(weatherItem.getImgId());
         }
 
-        if (imgId2 != null || Date1 != null) {
+        // Dành cho favorite
+        if (favoriteName != null) {
             favoriteName.setText(weatherItem.getNextDay());
-            favoriteDescription.setText(weatherItem.getDate());
-            favoriteTemp.setText(weatherItem.getTemp() + "°");
+            //favoriteDescription.setText(weatherItem.getDate());
+            //favoriteTemp.setText(weatherItem.getTemp() + "°");
             //imgId2.setImageResource(weatherItem.getImgId());
         }
 

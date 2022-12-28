@@ -6,7 +6,9 @@ public class WeatherItemNext7Days {
     String nextDay, date;
     int temp, imgId;
 
-
+    public WeatherItemNext7Days(String nextDay) {
+        this.nextDay = nextDay;
+    }
 
     public WeatherItemNext7Days(String nextDay, String date, int temp, int imgId) {
         this.nextDay = nextDay;

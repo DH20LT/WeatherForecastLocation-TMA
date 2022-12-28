@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -41,13 +43,18 @@ import java.util.Locale;
 
 public class MainActivityFavorite extends AppCompatActivity {
 
+    public static final String TAG = "MainActivityFavorite";
+
     ImageView backIcon, btnAdd, btnEdit, userIcon, homeIcon, chartIcon, favoriteIcon, findIcon;
     TextView nameTP;
     ListView lv;
+
     private static final int AUTOCOMPLETE_REQUEST_CODE = 1;
+
     WeatherAdapterNext7Days weatherAdapter;
     ArrayList<WeatherItemNext7Days> weatherArray;
-    public static final String TAG = "MainActivityFavorite";
+
+    WeatherAdapterNext7Days placeList;
 
     // init Firebase Realtime Database
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -68,9 +75,30 @@ public class MainActivityFavorite extends AppCompatActivity {
         homeIcon = (ImageView) findViewById(R.id.home_icon);
         findIcon = (ImageView) findViewById(R.id.find_icon);
         btnAdd = findViewById(R.id.img_plus);
-        lv = (ListView) findViewById(R.id.listview_favorite);
+        lv = findViewById(R.id.listview_favorite);
+        placeList = new WeatherAdapterNext7Days(this, R.layout.custom_listview_favorite);
 
         addControls();
+
+        // get data from Firebase
+        DatabaseReference myRef = database.getReference("favorites");
+        myRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DataSnapshot dataSnapshot = (DataSnapshot) task.getResult();
+                if (dataSnapshot.exists()) {
+                    Log.i(TAG, "onCreate: " + dataSnapshot.getValue());
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String name = snapshot.child("name").getValue(String.class);
+                        String lat = snapshot.child("lat").getValue(String.class);
+                        String lon = snapshot.child("lon").getValue(String.class);
+
+                        // add data to listview
+                        placeList.add(new WeatherItemNext7Days(name));
+                    }
+                    lv.setAdapter(placeList);
+                }
+            }
+        });
 
         findIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,41 +137,41 @@ public class MainActivityFavorite extends AppCompatActivity {
         weatherAdapter = new WeatherAdapterNext7Days(this, R.layout.custom_listview_favorite);
     }
 
-    public void Get7DaysData(String latData, String longData) {
-        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityFavorite.this);
-        String url = "https://api.openweathermap.org/data/3.0/onecall?lat="
-                + latData + "&lon=" + longData
-                + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
-        Log.i(TAG, "homnaytesturl" + url);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONObject jsonObjectCurrent = jsonObject.getJSONObject("current");
-                    int temp = jsonObjectCurrent.getInt("temp");
-                    JSONArray jsonArrayList = jsonObjectCurrent.getJSONArray("weather");
-                    JSONObject jsonObjectList = jsonArrayList.getJSONObject(0);
-                    String description = jsonObjectList.getString("description");
-
-                    WeatherItemNext7Days weatherItemNext7Days
-                            = new WeatherItemNext7Days(description, "", temp, 0);
-
-                    weatherAdapter.add(weatherItemNext7Days);
-
-                    lv.setAdapter(weatherAdapter);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        requestQueue.add(stringRequest);
-    }
+//    public void Get7DaysData(String latData, String longData) {
+//        RequestQueue requestQueue = Volley.newRequestQueue(MainActivityFavorite.this);
+//        String url = "https://api.openweathermap.org/data/3.0/onecall?lat="
+//                + latData + "&lon=" + longData
+//                + "&units=metric&lang=vi&appid=80cb1c70e3a3eb816f34f5e4261df662";
+//        Log.i(TAG, "homnaytesturl" + url);
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    JSONObject jsonObjectCurrent = jsonObject.getJSONObject("current");
+//                    int temp = jsonObjectCurrent.getInt("temp");
+//                    JSONArray jsonArrayList = jsonObjectCurrent.getJSONArray("weather");
+//                    JSONObject jsonObjectList = jsonArrayList.getJSONObject(0);
+//                    String description = jsonObjectList.getString("description");
+//
+//                    WeatherItemNext7Days weatherItemNext7Days
+//                            = new WeatherItemNext7Days(description, "", temp, 0);
+//
+//                    weatherAdapter.add(weatherItemNext7Days);
+//
+//                    lv.setAdapter(weatherAdapter);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//            }
+//        });
+//        requestQueue.add(stringRequest);
+//    }
 
     public void onSearchCalled() {
         Log.i(TAG, "onSearchCalled");
@@ -178,6 +206,8 @@ public class MainActivityFavorite extends AppCompatActivity {
                         String.valueOf(place.getLatLng().longitude)
                 );
                 favorite.push().setValue(place1);
+                placeList.add(new WeatherItemNext7Days(place.getName()));
+                lv.setAdapter(placeList);
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
                 // TODO: Handle the error.
                 Status status = Autocomplete.getStatusFromIntent(data);
